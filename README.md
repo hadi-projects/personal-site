@@ -29,13 +29,13 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
+   git clone https://github.com/hadi-projects/personal-site.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd <repository-name>
+   cd personal-site
    ```
 
 3. Install dependencies:
@@ -54,7 +54,7 @@ To run this project locally, follow these steps:
    yarn dev
    ```
 
-5. Open your browser and visit `http://localhost:3000` to see the website.
+5. Open your browser and visit `http://localhost:5173` to see the website.
 
 ## Deployment
 
@@ -88,6 +88,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Feel free to reach out to me if you have questions or feedback:
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-- **GitHub**: [Your GitHub Profile](https://github.com/your-username)
+- **Email**: [jtgunawan007@gmail.com](mailto:jtgunawan007@gmail.com)
+- **LinkedIn**: [Hadi Gunawan](https://www.linkedin.com/in/hadig007)
+- **GitHub**: [Hadi Gunawan](https://github.com/hadigun007)
