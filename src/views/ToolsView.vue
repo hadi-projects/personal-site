@@ -2,6 +2,7 @@
 
 <template>
   <div class="profile">
-    <h1>This is a tools page</h1>
+    <h1>Common used tools</h1>
+    1. JavaScript
   </div>
 </template>

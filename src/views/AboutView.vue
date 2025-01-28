@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const redirect = (d) => {
+import fork from '../assets/github-fork.png'
+const redirect = (d: string) => {
   window.open(d)
 }
 </script>
@@ -21,17 +22,12 @@ const redirect = (d) => {
     <footer>
       <section>
         <a @click="redirect('https://github.com/hadi-projects/personal-site/fork')">
-          <img width="16" :src="d.icon" alt="" />
+          <img width="16" height="16" :src="fork" alt=".." />
           Fork this repository</a
         >
       </section>
-      <p>
-        Fork this repository
-        <span class="link" @click="redirect('https://github.com/hadi-projects/personal-site/fork')">
-          https://github.com/hadi-projects/personal-site/fork</span
-        >.
-      </p>
-      <p>Latest update February 2025 .</p>
+      <br />
+      <p class="upd">Latest update February 2025 .</p>
     </footer>
   </div>
 </template>
@@ -43,5 +39,22 @@ const redirect = (d) => {
 }
 footer {
   margin: 2rem 0;
+}
+section a {
+  display: flex;
+  justify-items: center;
+  background: transparent;
+  /* margin: 0 5px; */
+  padding: 5px 10px;
+  width: fit-content;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  color: white;
+  background-color: #515151;
+}
+.upd {
+  font-size: 10px;
 }
 </style>

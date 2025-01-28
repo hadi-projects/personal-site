@@ -1,61 +1,93 @@
-# personal-site
+# Personal Website
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the repository for my personal website! This project serves as a platform to showcase my resume, portfolio, and professional achievements. The site is designed to be minimalistic, user-friendly, and fully responsive.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **About Page**: Contains information about me and this website.
+- **Portfolio Section**: Highlights some of the projects I've worked on.
+- **Resume Section**: Provides an overview of my professional experience and skills.
+- **Open Source**: The source code is open for learning, inspiration, and contributions.
 
-## Type Support for `.vue` Imports in TS
+## Technology Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Frontend**: Vue 3 with TypeScript
+- **Styling**: Vanilla CSS
+- **Build Tool**: Vite
 
-## Customize configuration
+## Getting Started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+To run this project locally, follow these steps:
 
-## Project Setup
+### Prerequisites
 
-```sh
-npm install
-```
+- Node.js (v16 or higher)
+- npm or yarn
 
-### Compile and Hot-Reload for Development
+### Installation
 
-```sh
-npm run dev
-```
+1. Clone the repository:
 
-### Type-Check, Compile and Minify for Production
+   ```bash
+   git clone https://github.com/<your-username>/<repository-name>.git
+   ```
 
-```sh
+2. Navigate to the project directory:
+
+   ```bash
+   cd <repository-name>
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open your browser and visit `http://localhost:3000` to see the website.
+
+## Deployment
+
+The site is configured to be deployed on platforms like Vercel, Netlify, or any static hosting provider.
+
+### Build for Production
+
+Run the following command to generate production files:
+
+```bash
 npm run build
+# or
+yarn build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+The output files will be in the `dist` directory.
 
-```sh
-npm run test:unit
-```
+## Contributing
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+Contributions are welcome! If you have ideas to improve the site or find issues, feel free to:
 
-```sh
-npm run test:e2e:dev
-```
+- Fork the repository
+- Create a new branch
+- Submit a pull request
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## License
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+This project is open source and available under the [MIT License](LICENSE).
 
-```sh
-npm run build
-npm run test:e2e
-```
+## Contact
 
-### Lint with [ESLint](https://eslint.org/)
+Feel free to reach out to me if you have questions or feedback:
 
-```sh
-npm run lint
-```
+- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
+- **GitHub**: [Your GitHub Profile](https://github.com/your-username)

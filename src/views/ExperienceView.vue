@@ -1,13 +1,7 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 
-type TimelineEvent = {
-  title: string
-  date: string
-  description: string
-}
-
-const timelineEvents: TimelineEvent[] = reactive([
+const timelineEvents: unknown = reactive([
   {
     title: 'Lead Developer',
     date: 'Juny 2024 - Now',
