@@ -1,0 +1,110 @@
+<script setup lang="ts">
+const certificates = [
+  // {
+  //   img: '..',
+  //   name: 'The Ultimate Comprehensive Course - Perfect for Both Beginners and Experienced Developers',
+  //   year: '2025',
+  // },
+  // {
+  //   img: '..',
+  //   name: 'The Project Management Course: Beginner to PROject Manager',
+  //   year: '2025',
+  // },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-e8970833-cae4-4c65-b3e0-95e2e08ef428.jpg?v=1707496435000',
+    name: 'Clean Code',
+    year: '2024',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4512175e-f0eb-4ca5-8248-dced3c76cd21.jpg?v=1664123858000',
+    name: 'JavaScript - The Complete Guide 2024 (Beginner + Advanced) ',
+    year: '2024',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2acaf9b5-35e3-45d1-915d-0f664de050a1.jpg?v=1707540295000',
+    name: 'NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)',
+    year: '2024',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4a1fc55c-8dcf-4b0c-b6ee-d5228a9e2474.jpg?v=1664127093000',
+    name: 'CSS - The Complete Guide 2024 (incl. Flexbox, Grid & Sass)',
+    year: '2024',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-b3ad2494-78e3-4b9b-9e8a-103680ecacb1.jpg?v=1664123078000',
+    name: 'Flutter & Dart - The Complete Guide [2024 Edition]',
+    year: '2022',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-9e567699-e403-4b59-a673-42aa62cf908f.jpg?v=1664126589000',
+    name: 'Master Laravel, Vue 3 & Inertia Full Stack 2023',
+    year: '2022',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2a6052a7-0c17-4b85-a7b2-248089ca305e.jpg?v=1602426392000',
+    name: 'The Ultimate Guide to 2D Mobile Game Development with Unity',
+    year: '2020',
+  },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2a6052a7-0c17-4b85-a7b2-248089ca305e.jpg?v=1602426392000',
+    name: 'Complete C# Unity Game Developer 2D',
+    year: '2020',
+  },
+]
+const redirect = (d) => {
+  window.open(d)
+}
+</script>
+
+<template>
+  <div class="certifications">
+    <h1>This is a certification page</h1>
+    <div class="cards">
+      <div class="card" v-for="(d, i) in certificates" :key="i">
+        <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
+        <img @click="redirect(d.img)" v-else :src="d.img" width="240" alt="" />
+        <div class="title">
+          <h3>{{ d.name }}</h3>
+          <p>{{ d.year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.title {
+  padding: 0.2rem;
+}
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.card {
+  border: solid 1px #3a3a3a;
+  width: 240px;
+  /* padding: 0.2rem; */
+  border-radius: 8px;
+}
+.progress {
+  width: 240px;
+  height: 178.5px;
+  background-color: #f7f6f6;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: rgb(92, 87, 87);
+}
+.progress p {
+  margin-top: 5rem;
+}
+img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+}
+</style>
