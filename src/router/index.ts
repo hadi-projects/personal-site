@@ -18,7 +18,34 @@ const router = createRouter({
     },
     {
       path: '/portofolio',
-      component: () => import('../views/PortofolioView.vue')
+      component: () => import('../views/PortofolioView.vue'),
+      children: [
+        {
+          path: 'lapor',
+          name: 'lapor',
+          component: () => import('../views/portofolio/LaporView.vue')
+        },
+        {
+          path: 'sivisat',
+          name: 'sivisat',
+          component: () => import('../views/portofolio/SivisatView.vue')
+        },
+        {
+          path: 'blog-kampus',
+          name: 'blog-kampus',
+          component: () => import('../views/portofolio/BlogKampusView.vue')
+        },
+        {
+          path: 'kasirku',
+          name: 'kasirku',
+          component: () => import('../views/portofolio/KasirkuView.vue')
+        },
+        {
+          path: 'pemdes',
+          name: 'pemdes',
+          component: () => import('../views/portofolio/PemdesView.vue')
+        },
+      ]
     },
     {
       path: '/certification',

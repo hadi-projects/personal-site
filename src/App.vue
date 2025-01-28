@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import download from './assets/download.svg'
 import plus from './assets/plus.svg'
 const selected_nav = ref('profile')
+import { useCounterStore } from './stores/counter'
 
 const navs = [
   {
@@ -47,6 +48,8 @@ const downloads = [
     url: 'https://www.figma.com/slides/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-59&t=GHw6dByvBg5U3YMI-0',
   },
 ]
+
+const data = useCounterStore()
 const redirect = (d: string) => {
   window.open(d)
 }
@@ -65,7 +68,12 @@ const redirect = (d: string) => {
     </header>
     <nav>
       <router-link
-        @click="selected_nav = d.name"
+        @click="
+          () => {
+            selected_nav = d.name
+            data.set_current_porto('')
+          }
+        "
         v-for="(d, i) in navs"
         :key="i"
         :class="[selected_nav == d.name ? 'active' : '']"

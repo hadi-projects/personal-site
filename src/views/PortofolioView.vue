@@ -4,45 +4,66 @@ import sivisat from '../assets/portofolio/sivisat.png'
 import blog_kampus from '../assets/portofolio/blog kampus.png'
 import kasirku from '../assets/portofolio/kasirku.png'
 import pemdes from '../assets/portofolio/pemdes.png'
-const tennet = [
+import vault from '../assets/portofolio/vault.png'
+import vault_management from '../assets/portofolio/vault management.png'
+import landing from '../assets/portofolio/landing.png'
+import { useCounterStore } from '../stores/counter'
+import router from '@/router'
+import { RouterView } from 'vue-router'
+
+const freelance = [
   {
     img: lapor,
     name: 'Lapor',
+    url: 'lapor',
     year: '2021',
   },
   {
     img: sivisat,
     name: 'Sivisat',
+    url: 'sivisat',
     year: '2021',
   },
   {
     img: blog_kampus,
     name: 'Blog Kampus',
+    url: 'blog-kampus',
     year: '2020',
   },
   {
     img: kasirku,
     name: 'Kasirku',
+    url: 'kasirku',
     year: '2021',
   },
   {
     img: pemdes,
-    name: 'Pemdes',
+    name: 'Form Pemdes',
+    url: 'pemdes',
     year: '2021',
   },
 ]
-const freelance = [
+const tennet = [
   {
-    img: lapor,
-    name: 'Lapor',
-    year: '2021',
+    img: vault,
+    url: 'vault',
+    name: 'Tennet Vault',
+    year: '2023',
   },
   {
-    img: sivisat,
-    name: 'Sivisat',
-    year: '2021',
+    img: vault_management,
+    url: 'vault-management',
+    name: 'Vault Management',
+    year: '2022-2023',
+  },
+  {
+    img: landing,
+    url: 'landing',
+    name: 'Tennet Landing Page',
+    year: '2023',
   },
 ]
+const data = useCounterStore()
 const redirect = (d: string) => {
   window.open(d)
 }
@@ -50,30 +71,57 @@ const redirect = (d: string) => {
 
 <template>
   <div class="portofolio">
-    <header>
-      <h2>Tennet Depository</h2>
-    </header>
-    <div class="cards">
-      <div class="card" v-for="(d, i) in tennet" :key="i">
-        <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
-        <img @click="redirect(d.img)" v-else :src="d.img" width="240" alt="" />
-        <div class="title">
-          <h3>{{ d.name }}</h3>
-          <p>{{ d.year }}</p>
+    <div v-if="data.current_porto != ''">
+      <RouterView />
+    </div>
+    <div v-else>
+      <header>
+        <h2>Tennet Depository</h2>
+      </header>
+      <div class="cards">
+        <div class="card" v-for="(d, i) in tennet" :key="i">
+          <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
+          <img
+            @click="
+              () => {
+                data.set_current_porto(d.url)
+                router.push({ name: d.url })
+              }
+            "
+            v-else
+            :src="d.img"
+            width="240"
+            alt=""
+          />
+          <div class="title">
+            <h3>{{ d.name }}</h3>
+            <p>{{ d.year }}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <br />
-    <header>
-      <h2>Freelance</h2>
-    </header>
-    <div class="cards">
-      <div class="card" v-for="(d, i) in freelance" :key="i">
-        <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
-        <img @click="redirect(d.img)" v-else :src="d.img" width="240" alt="" />
-        <div class="title">
-          <h3>{{ d.name }}</h3>
-          <p>{{ d.year }}</p>
+      <br />
+      <header>
+        <h2>Freelance</h2>
+      </header>
+      <div class="cards">
+        <div class="card" v-for="(d, i) in freelance" :key="i">
+          <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
+          <img
+            @click="
+              () => {
+                data.set_current_porto(d.url)
+                router.push({ name: d.url })
+              }
+            "
+            v-else
+            :src="d.img"
+            width="240"
+            alt=""
+          />
+          <div class="title">
+            <h3>{{ d.name }}</h3>
+            <p>{{ d.year }}</p>
+          </div>
         </div>
       </div>
     </div>
