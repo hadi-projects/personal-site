@@ -33,17 +33,23 @@ const navs = [
 const downloads = [
   {
     name: 'Request Project',
-    url: plus,
+    icon: plus,
+    url: 'https://wa.me/+6281282115843',
   },
   {
     name: 'Download CV',
-    url: download,
+    icon: download,
+    url: 'https://drive.google.com/file/d/1vCwpYzrHagIMvjdQ-ff38euyZCVTQXfL/view?usp=sharing',
   },
   {
     name: 'Download Portofolio',
-    url: download,
+    icon: download,
+    url: 'https://www.figma.com/slides/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-59&t=GHw6dByvBg5U3YMI-0',
   },
 ]
+const redirect = (d) => {
+  window.open(d)
+}
 </script>
 
 <template>
@@ -51,8 +57,8 @@ const downloads = [
     <header>
       <h1>Personal Site</h1>
       <section>
-        <a v-for="(d, i) in downloads" :key="i" @click="window.open(d.url)">
-          <img width="16" :src="d.url" alt="" />
+        <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
+          <img width="16" :src="d.icon" alt="" />
           {{ d.name }}</a
         >
       </section>
@@ -133,6 +139,11 @@ header a {
   padding: 5px 10px;
   width: fit-content;
   border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+  background-color: #5b5b5b;
 }
 header section {
   width: max-content;

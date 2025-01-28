@@ -1,15 +1,10 @@
 <script setup lang="ts">
 const certificates = [
-  // {
-  //   img: '..',
-  //   name: 'The Ultimate Comprehensive Course - Perfect for Both Beginners and Experienced Developers',
-  //   year: '2025',
-  // },
-  // {
-  //   img: '..',
-  //   name: 'The Project Management Course: Beginner to PROject Manager',
-  //   year: '2025',
-  // },
+  {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-d2152e41-6bfa-4a8a-9f77-a6c4a789cb59.jpg?v=1708879219000',
+    name: 'Principles of Secure Coding',
+    year: '2024',
+  },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-e8970833-cae4-4c65-b3e0-95e2e08ef428.jpg?v=1707496435000',
     name: 'Clean Code',
@@ -58,7 +53,9 @@ const redirect = (d) => {
 
 <template>
   <div class="certifications">
-    <h1>This is a certification page</h1>
+    <header>
+      <h2>Udemy Certifications</h2>
+    </header>
     <div class="cards">
       <div class="card" v-for="(d, i) in certificates" :key="i">
         <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
@@ -74,7 +71,13 @@ const redirect = (d) => {
 
 <style scoped>
 .title {
-  padding: 0.2rem;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header {
+  padding: 1rem 0;
 }
 .cards {
   display: flex;
@@ -83,10 +86,11 @@ const redirect = (d) => {
   overflow: auto;
 }
 .card {
-  border: solid 1px #3a3a3a;
+  /* border: solid 1px #3a3a3a; */
   width: 240px;
-  /* padding: 0.2rem; */
   border-radius: 8px;
+  /* background-color: #6e6e6e; */
+  background-color: #515151;
 }
 .progress {
   width: 240px;
@@ -106,5 +110,11 @@ img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   cursor: pointer;
+}
+.title h3 {
+  font-size: 14px;
+}
+.title p {
+  font-size: 12px;
 }
 </style>
