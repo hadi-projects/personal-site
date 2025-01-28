@@ -47,7 +47,7 @@ const downloads = [
     url: 'https://www.figma.com/slides/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-59&t=GHw6dByvBg5U3YMI-0',
   },
 ]
-const redirect = (d) => {
+const redirect = (d: string) => {
   window.open(d)
 }
 </script>

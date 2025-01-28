@@ -46,7 +46,7 @@ const certificates = [
     year: '2020',
   },
 ]
-const redirect = (d) => {
+const redirect = (d: string) => {
   window.open(d)
 }
 </script>

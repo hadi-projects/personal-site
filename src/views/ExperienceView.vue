@@ -1,7 +1,14 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 
-const timelineEvents: unknown = reactive([
+interface TimelineEvent {
+  title: string
+  date: string
+  company: string
+  description: string[]
+}
+
+const timelineEvents: TimelineEvent[] = reactive([
   {
     title: 'Lead Developer',
     date: 'Juny 2024 - Now',
@@ -18,13 +25,11 @@ const timelineEvents: unknown = reactive([
     title: 'IT Development',
     company: 'Tennet Depository Indonesia',
     date: 'Juny 2024 - Now',
-    description: 'Description for event 1. This event marks the beginning of the timeline.',
     description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
   },
   {
     title: 'Fullstack Engineer',
     date: 'Octiber 2022 - Juny 2024',
-    description: 'Description for event 2. A special milestone in the journey.',
     company: 'Tennet Depository Indonesia',
     description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
   },
