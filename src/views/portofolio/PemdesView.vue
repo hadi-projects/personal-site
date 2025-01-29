@@ -19,7 +19,7 @@ const data = useCounterStore()
         "
         :src="back"
       />
-      <h2>Form Pemdes</h2>
+      <h2>Form Pendes - Village Election Management Application</h2>
     </div>
     <div class="body">
       <div class="gallery">
@@ -27,26 +27,21 @@ const data = useCounterStore()
       </div>
       <h4>Description</h4>
       <p>
-        Kasirku is a custom-built Point of Sale (POS) application developed for a small business
-        (UMKM) based on their specific needs. The application simplifies daily operations and
-        improves efficiency in managing sales and inventory.
+        Form Pendes is a simple yet effective application designed to streamline the village head
+        election process. It replaces manual data recording with a digital form system, ensuring
+        more accurate and efficient election management.
       </p>
       <h4>Key Features</h4>
       <ul>
+        <li>Voter Registration: Allows input of voter names to ensure proper documentation.</li>
         <li>
-          Sales Reports: Provides detailed daily and monthly sales reports for easy performance
-          tracking.
+          Candidate Selection: Enables voters to choose their preferred village head candidate.
         </li>
         <li>
-          Barcode Scanning: Enables quick and accurate product entry and sales processing through
-          barcode scanning.
+          Data Recording & Management: Digitizes election records for improved accuracy and
+          accessibility.
         </li>
-        <li>
-          User-Friendly Interface: Designed for ease of use, minimizing training requirements for
-          staff.
-        </li>
-        <li>Inventory Management: Keeps track of stock levels and product details.</li>
-        <li>Secure Transactions: Ensures safe and reliable handling of financial data.</li>
+        <li>User-Friendly Interface: Designed for ease of use by election officials and voters.</li>
       </ul>
       <h4>Technology Used</h4>
       <div class="pair">
@@ -67,7 +62,7 @@ const data = useCounterStore()
       </div>
       <div class="pair">
         <p>Server:</p>
-        <p>localhost(used locally)</p>
+        <p>VPS IdCloudHost</p>
       </div>
     </div>
   </div>

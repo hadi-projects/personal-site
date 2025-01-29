@@ -2,8 +2,9 @@
 import back from '../../assets/back.svg'
 import router from '@/router'
 import { useCounterStore } from '../../stores/counter'
-import blog_kampus1 from '../../assets/portofolio/blog-kampus-1.jpg'
-import blog_kampus2 from '../../assets/portofolio/blog-kampus-2.jpg'
+import vm_1 from '../../assets/portofolio/vm-1.png'
+import vm_2 from '../../assets/portofolio/vm-2.png'
+import vm_3 from '../../assets/portofolio/vm-3.png'
 
 const data = useCounterStore()
 </script>
@@ -24,37 +25,35 @@ const data = useCounterStore()
     </div>
     <div class="body">
       <div class="gallery">
-        <img width="300" :src="blog_kampus1" />
-        <img width="300" :src="blog_kampus2" />
+        <img width="300" :src="vm_1" />
+        <img width="300" :src="vm_2" />
+        <img width="300" :src="vm_3" />
       </div>
       <h4>Description</h4>
       <p>
-        This project is a simple blogging platform developed within a campus environment. The
-        primary goal was to provide a dedicated space for students to express their thoughts, share
-        knowledge, and enhance their writing skills.
+        Vault Management is an internal enterprise dashboard designed for managing client vault
+        operations efficiently. It provides tools for transaction oversight, compliance management,
+        and operational controls.
       </p>
       <h4>Key Features</h4>
       <ul>
-        <li>
-          Student-Centric Design: Tailored to meet the needs of university students. Simple Blogging
-        </li>
-        <li>Tools: Enables users to create, edit, and publish posts with ease.</li>
-        <li>Community Engagement: Allows readers to comment and interact with authors</li>
-        <li>Search and Categories: Organizes content by topics for better discoverability.</li>
-        <li>Responsive Design: Optimized for both desktop and mobile devices.</li>
+        <li>Client Management: Supports secure onboarding and verification processes.</li>
+        <li>Approval Workflow: Implements multi-layer approval for transactions..</li>
+        <li>Transaction Inquiry: Enables real-time tracking and monitoring of vault activities.</li>
+        <li>Fee Management: Provides configurable fee structures for different client needs.</li>
       </ul>
       <h4>Technology Used</h4>
       <div class="pair">
         <p>Programming Laguage:</p>
-        <p>Javascript, PHP</p>
+        <p>Golang</p>
       </div>
       <div class="pair">
         <p>Frontend:</p>
-        <p>Vue Js, Vuex, Vue-Router, Axios, Vuestic Ui, Vue3 Editor</p>
+        <p>Golang</p>
       </div>
       <div class="pair">
         <p>Backend:</p>
-        <p>Laravel</p>
+        <p>Golang</p>
       </div>
       <div class="pair">
         <p>Database:</p>
@@ -62,8 +61,13 @@ const data = useCounterStore()
       </div>
       <div class="pair">
         <p>Server:</p>
-        <p>VPS IdCloudHost</p>
+        <p>Google Cloud Platform</p>
       </div>
+      <br />
+      <p>
+        Vault Management demonstrates my ability to develop enterprise-grade financial systems with
+        a focus on security, compliance, and operational efficiency.
+      </p>
     </div>
   </div>
 </template>

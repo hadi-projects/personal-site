@@ -50,6 +50,16 @@ const router = createRouter({
           name: 'pemdes',
           component: () => import('../views/portofolio/PemdesView.vue')
         },
+        {
+          path: 'vault',
+          name: 'vault',
+          component: () => import('../views/portofolio/VaultView.vue')
+        },
+        {
+          path: 'vault-management',
+          name: 'vault-management',
+          component: () => import('../views/portofolio/VaultManagementView.vue')
+        },
       ]
     },
     {

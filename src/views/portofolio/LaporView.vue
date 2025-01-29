@@ -21,7 +21,7 @@ const data = useCounterStore()
         "
         :src="back"
       />
-      <h2>Sivisat</h2>
+      <h2>Lapor</h2>
     </div>
     <div class="body">
       <div class="gallery">
