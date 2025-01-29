@@ -21,6 +21,11 @@ const router = createRouter({
       component: () => import('../views/PortofolioView.vue'),
       children: [
         {
+          path: 'palalu',
+          name: 'palalu',
+          component: () => import('../views/portofolio/PalaluView.vue')
+        },
+        {
           path: 'lapor',
           name: 'lapor',
           component: () => import('../views/portofolio/LaporView.vue')

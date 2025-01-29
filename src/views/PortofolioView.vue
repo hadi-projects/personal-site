@@ -7,11 +7,18 @@ import pemdes from '../assets/portofolio/pemdes.png'
 import vault from '../assets/portofolio/vault.png'
 import vault_management from '../assets/portofolio/vault management.png'
 import landing from '../assets/portofolio/landing.png'
+import palalu from '../assets/portofolio/palalu.png'
 import { useCounterStore } from '../stores/counter'
 import router from '@/router'
 import { RouterView } from 'vue-router'
 
 const freelance = [
+  {
+    img: palalu,
+    name: 'Palalu',
+    url: 'palalu',
+    year: '2022',
+  },
   {
     img: lapor,
     name: 'Lapor',
@@ -64,9 +71,6 @@ const tennet = [
   },
 ]
 const data = useCounterStore()
-const redirect = (d: string) => {
-  window.open(d)
-}
 </script>
 
 <template>

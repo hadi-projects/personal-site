@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const certificates = [
   {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4b92aea2-7504-4cab-add4-e0f2203a6b24.jpg?v=1738133183000',
+    name: `Learn How To Code: Google's Go (golang) Programming Language`,
+    year: '2025',
+  },
+  {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-d2152e41-6bfa-4a8a-9f77-a6c4a789cb59.jpg?v=1708879219000',
     name: 'Principles of Secure Coding',
     year: '2024',
