@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const certificates = [
   {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-f4d80d51-698b-4082-8686-05d248706806.jpg?v=1738230696000',
+    name: `The Project Management Course: Beginner to PROject Manager`,
+    year: '2025',
+  },
+  {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4b92aea2-7504-4cab-add4-e0f2203a6b24.jpg?v=1738133183000',
     name: `Learn How To Code: Google's Go (golang) Programming Language`,
     year: '2025',

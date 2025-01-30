@@ -11,6 +11,7 @@ import palalu from '../assets/portofolio/palalu.png'
 import { useCounterStore } from '../stores/counter'
 import router from '@/router'
 import { RouterView } from 'vue-router'
+import api from '../assets/portofolio/api.png'
 
 const freelance = [
   {
@@ -70,6 +71,20 @@ const tennet = [
     year: '2023',
   },
 ]
+const personal = [
+  {
+    img: api,
+    url: 'vault',
+    name: 'Personal Site',
+    year: '2023',
+  },
+  {
+    img: api,
+    url: 'vault-management',
+    name: 'Wallet Api Express',
+    year: '2022-2023',
+  },
+]
 const data = useCounterStore()
 </script>
 
@@ -79,6 +94,30 @@ const data = useCounterStore()
       <RouterView />
     </div>
     <div v-else>
+      <header>
+        <h2>Personal Project</h2>
+      </header>
+      <div class="cards">
+        <div class="card" v-for="(d, i) in personal" :key="i">
+          <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
+          <img
+            @click="
+              () => {
+                data.set_current_porto(d.url)
+                router.push({ name: d.url })
+              }
+            "
+            v-else
+            :src="d.img"
+            width="240"
+            alt=""
+          />
+          <div class="title">
+            <h3>{{ d.name }}</h3>
+            <p>{{ d.year }}</p>
+          </div>
+        </div>
+      </div>
       <header>
         <h2>Tennet Depository</h2>
       </header>
@@ -162,5 +201,8 @@ img {
 }
 .title p {
   font-size: 12px;
+}
+header {
+  margin: 2rem 1rem 0 0;
 }
 </style>

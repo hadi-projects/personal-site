@@ -45,7 +45,7 @@ const downloads = [
   {
     name: 'Download Portofolio',
     icon: download,
-    url: 'https://www.figma.com/slides/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-59&t=GHw6dByvBg5U3YMI-0',
+    url: 'https://www.figma.com/deck/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-25&t=VzYSw1M1PGXsjG20-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
   },
 ]
 

@@ -60,6 +60,11 @@ const router = createRouter({
           name: 'vault-management',
           component: () => import('../views/portofolio/VaultManagementView.vue')
         },
+        {
+          path: 'landing',
+          name: 'landing',
+          component: () => import('../views/portofolio/LandingView.vue')
+        },
       ]
     },
     {

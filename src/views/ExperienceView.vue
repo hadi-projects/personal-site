@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
+import tennet_logo from '../assets/tennet.png'
+import freelance from '../assets/freelance.png'
 
 interface TimelineEvent {
   title: string
   date: string
   company: string
   description: string[]
+  company_logo: unknown
 }
 
 const timelineEvents: TimelineEvent[] = reactive([
@@ -14,30 +17,35 @@ const timelineEvents: TimelineEvent[] = reactive([
     date: 'Juny 2024 - Now',
     company: 'Tennet Depository Indonesia',
     description: ['Managing team', 'bla bla bla', 'bla bla bla'],
+    company_logo: tennet_logo,
   },
   {
     title: 'Backend Developer',
     company: 'Tennet Depository Indonesia',
     date: 'January 2024 - Juny 2024',
     description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
+    company_logo: tennet_logo,
   },
   {
     title: 'IT Development',
     company: 'Tennet Depository Indonesia',
     date: 'Juny 2024 - Now',
     description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
+    company_logo: tennet_logo,
   },
   {
     title: 'Fullstack Engineer',
     date: 'Octiber 2022 - Juny 2024',
     company: 'Tennet Depository Indonesia',
     description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
+    company_logo: tennet_logo,
   },
   {
     company: 'Freelance',
     title: 'Software Engineer',
     date: 'Octiber 2022 - Juny 2024',
     description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
+    company_logo: freelance,
   },
 ])
 </script>
@@ -49,7 +57,10 @@ const timelineEvents: TimelineEvent[] = reactive([
         <h3 class="title">{{ event.title }}</h3>
         <section>
           <div class="company">
-            <p>{{ event.company }}</p>
+            <div class="logo">
+              <img width="60" height="10" :src="event.company_logo as string" alt="" />
+              <p>{{ event.company }}</p>
+            </div>
             <p>{{ event.date }}</p>
           </div>
         </section>
@@ -64,6 +75,12 @@ const timelineEvents: TimelineEvent[] = reactive([
 </template>
 
 <style scoped>
+.logo {
+  height: 30px;
+  display: flex;
+  justify-items: center;
+  gap: 1rem;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
