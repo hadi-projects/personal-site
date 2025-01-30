@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import download from './assets/download.svg'
 import plus from './assets/plus.svg'
-const selected_nav = ref('profile')
+const selected_nav = ref('/profile')
 import { useCounterStore } from './stores/counter'
 
 const navs = [
@@ -70,13 +70,13 @@ const redirect = (d: string) => {
       <router-link
         @click="
           () => {
-            selected_nav = d.name
+            selected_nav = d.route
             data.set_current_porto('')
           }
         "
         v-for="(d, i) in navs"
         :key="i"
-        :class="[selected_nav == d.name ? 'active' : '']"
+        :class="[selected_nav == d.route ? 'active' : '']"
         :to="d.route"
         >{{ d.name }}</router-link
       >
