@@ -242,19 +242,28 @@ nav {
   justify-content: space-around;
   width: 100%;
 }
+
 a {
   color: white;
   text-decoration: none;
   width: 100%;
-  background: #7c7c7c;
+  /* background: #14b8a6; */
   text-align: center;
-  cursor: pointer;
+  transition:
+    background 0.3s ease-in-out,
+    transform 0.2s;
+  border-bottom: transparent solid 1px;
+}
+
+h1 {
+  margin: 1rem 0;
 }
 a:hover {
-  background: #6e6e6e;
+  border-bottom: #0d9488 solid 1px;
+  /* transform: translateY(-2px); */
 }
 .active {
-  background: #6e6e6e;
+  border-bottom: #0d9488 solid 1px;
 }
 .content {
   padding: 2rem 0;
@@ -265,16 +274,20 @@ a:hover {
 }
 .cards {
   display: flex;
-  gap: 2rem;
+  gap: 20px;
   flex-wrap: wrap;
-  overflow: auto;
 }
 .card {
-  /* border: solid 1px #3a3a3a; */
-  width: 240px;
-  border-radius: 8px;
-  /* background-color: #6e6e6e; */
-  background-color: #515151;
+  border-radius: 12px;
+  background-color: #1e293b;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
+  border: 1px solid rgba(20, 184, 166, 0.5);
+}
+.card:hover {
+  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
 }
 .title {
   padding: 0.4rem;

@@ -151,7 +151,7 @@ onUnmounted(() => {
   box-shadow:
     0 6px 12px rgba(0, 0, 0, 0.15),
     0 12px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-5px);
+  /* transform: translateY(-5px); */
 }
 
 .particle {

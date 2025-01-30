@@ -69,7 +69,7 @@ const redirect = (d: string) => {
     <div class="cards">
       <div class="card" v-for="(d, i) in certificates" :key="i">
         <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
-        <img @click="redirect(d.img)" v-else :src="d.img" width="240" alt="" />
+        <img @click="redirect(d.img)" v-else :src="d.img" width="238" alt="" />
         <div class="title">
           <h3>{{ d.name }}</h3>
           <p>{{ d.year }}</p>
@@ -91,16 +91,21 @@ header {
 }
 .cards {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
-  overflow: auto;
+  gap: 20px;
 }
 .card {
-  /* border: solid 1px #3a3a3a; */
+  border-radius: 12px;
+  background-color: #1e293b;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
+  border: 1px solid rgba(20, 184, 166, 0.5);
   width: 240px;
-  border-radius: 8px;
-  /* background-color: #6e6e6e; */
-  background-color: #515151;
+}
+.card:hover {
+  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
 }
 .progress {
   width: 240px;

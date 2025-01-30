@@ -96,22 +96,29 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  background-color: #0f172a;
 }
 a {
   color: white;
   text-decoration: none;
   width: 100%;
-  background: #7c7c7c;
+  /* background: #14b8a6; */
   text-align: center;
+  transition:
+    background 0.3s ease-in-out,
+    transform 0.2s;
+  border-bottom: transparent solid 1px;
 }
+
 a:hover {
-  background: #6e6e6e;
+  border-bottom: #0d9488 solid 1px;
+  /* transform: translateY(-2px); */
 }
 .active {
-  background: #6e6e6e;
+  border-bottom: #0d9488 solid 1px;
 }
 header {
-  background-color: #515151;
+  background-color: #0f172a;
   width: 100%;
   color: white;
   padding: 10px;
@@ -123,7 +130,7 @@ header {
   gap: 10px;
 }
 .card {
-  background-color: #5b5b5b;
+  background-color: #1e293b;
   /* min-height: 100vh; */
   height: 600px;
   width: 1200px;
@@ -154,7 +161,7 @@ header a {
   display: flex;
   justify-items: center;
   gap: 10px;
-  background-color: #5b5b5b;
+  background-color: #14b8a6;
 }
 header section {
   width: max-content;

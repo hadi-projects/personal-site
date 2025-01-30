@@ -103,11 +103,16 @@ const data = useCounterStore()
   gap: 20px;
 }
 .card {
-  border-radius: 8px;
-  background-color: #515151;
+  border-radius: 12px;
+  background-color: #1e293b;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
+  border: 1px solid rgba(20, 184, 166, 0.5);
+}
+.card:hover {
+  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
 }
 .title {
   font-weight: bold;

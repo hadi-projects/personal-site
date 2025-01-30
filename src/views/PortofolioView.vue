@@ -176,14 +176,18 @@ const data = useCounterStore()
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  overflow: auto;
 }
 .card {
-  /* border: solid 1px #3a3a3a; */
-  width: 240px;
-  border-radius: 8px;
-  /* background-color: #6e6e6e; */
-  background-color: #515151;
+  border-radius: 12px;
+  background-color: #1e293b;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
+  border: 1px solid rgba(20, 184, 166, 0.5);
+}
+.card:hover {
+  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
 }
 img {
   border-top-left-radius: 8px;

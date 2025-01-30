@@ -41,20 +41,19 @@ footer {
   margin: 2rem 0;
 }
 section a {
-  display: flex;
-  justify-items: center;
+  color: white;
   background: transparent;
-  /* margin: 0 5px; */
+  margin: 0 5px;
   padding: 5px 10px;
   width: fit-content;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
+  justify-items: center;
   gap: 10px;
-  color: white;
-  background-color: #515151;
+  background-color: #14b8a6;
 }
-.upd {
+p {
   font-size: 10px;
 }
 </style>
