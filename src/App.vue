@@ -4,6 +4,7 @@ import download from './assets/download.svg'
 import plus from './assets/plus.svg'
 const selected_nav = ref('/profile')
 import { useCounterStore } from './stores/counter'
+import BackgroundPage from './components/BackgroundPage.vue'
 
 const navs = [
   {
@@ -56,35 +57,37 @@ const redirect = (d: string) => {
 </script>
 
 <template>
-  <div class="card">
-    <header>
-      <h1>Personal Site</h1>
-      <section>
-        <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
-          <img width="16" :src="d.icon" alt="" />
-          {{ d.name }}</a
+  <background-page>
+    <div class="card">
+      <header>
+        <h1>Personal Site</h1>
+        <section>
+          <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
+            <img width="16" :src="d.icon" alt="" />
+            {{ d.name }}</a
+          >
+        </section>
+      </header>
+      <nav>
+        <router-link
+          @click="
+            () => {
+              selected_nav = d.route
+              data.set_current_porto('')
+            }
+          "
+          v-for="(d, i) in navs"
+          :key="i"
+          :class="[selected_nav == d.route ? 'active' : '']"
+          :to="d.route"
+          >{{ d.name }}</router-link
         >
-      </section>
-    </header>
-    <nav>
-      <router-link
-        @click="
-          () => {
-            selected_nav = d.route
-            data.set_current_porto('')
-          }
-        "
-        v-for="(d, i) in navs"
-        :key="i"
-        :class="[selected_nav == d.route ? 'active' : '']"
-        :to="d.route"
-        >{{ d.name }}</router-link
-      >
-    </nav>
-    <main>
-      <RouterView />
-    </main>
-  </div>
+      </nav>
+      <main>
+        <RouterView />
+      </main>
+    </div>
+  </background-page>
 </template>
 
 <style scoped>
