@@ -14,7 +14,34 @@ const router = createRouter({
     },
     {
       path: '/experience',
-      component: () => import('../views/ExperienceView.vue')
+      component: () => import('../views/ExperienceView.vue'),
+      children: [
+        {
+          path: 'lead',
+          name: 'lead',
+          component: () => import('../views/experience/LeadDeveloperView.vue')
+        },
+        {
+          path: 'backend',
+          name: 'backend',
+          component: () => import('../views/experience/BackendDeveloperView.vue')
+        },
+        {
+          path: 'itdev',
+          name: 'itdev',
+          component: () => import('../views/experience/ITDevelopmentView.vue')
+        },
+        {
+          path: 'fullstack',
+          name: 'fullstack',
+          component: () => import('../views/experience/FullstackDeveloperView.vue')
+        },
+        {
+          path: 'software',
+          name: 'software',
+          component: () => import('../views/experience/SoftwareEngineer.vue')
+        },
+      ]
     },
     {
       path: '/portofolio',

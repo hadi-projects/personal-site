@@ -2,13 +2,15 @@
 import { reactive } from 'vue'
 import tennet_logo from '../assets/tennet.png'
 import freelance from '../assets/freelance.png'
+import { useCounterStore } from '../stores/counter'
+import router from '@/router'
 
 interface TimelineEvent {
   title: string
   date: string
   company: string
-  description: string[]
   company_logo: unknown
+  route: string
 }
 
 const timelineEvents: TimelineEvent[] = reactive([
@@ -16,65 +18,72 @@ const timelineEvents: TimelineEvent[] = reactive([
     title: 'Lead Developer',
     date: 'Juny 2024 - Now',
     company: 'Tennet Depository Indonesia',
-    description: ['Managing team', 'bla bla bla', 'bla bla bla'],
     company_logo: tennet_logo,
-    site: 'https://tennet.id',
+    route: 'lead',
   },
   {
     title: 'Backend Developer',
     company: 'Tennet Depository Indonesia',
     date: 'January 2024 - Juny 2024',
-    description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
     company_logo: tennet_logo,
-    site: 'https://tennet.id',
+    route: 'backend',
   },
   {
     title: 'IT Development',
     company: 'Tennet Depository Indonesia',
     date: 'Juny 2024 - Now',
-    description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
     company_logo: tennet_logo,
-    site: 'https://tennet.id',
+    route: 'itdev',
   },
   {
     title: 'Fullstack Engineer',
     date: 'Octiber 2022 - Juny 2024',
     company: 'Tennet Depository Indonesia',
-    description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
     company_logo: tennet_logo,
-    site: 'https://tennet.id',
+    route: 'fullstack',
   },
   {
     company: 'Freelance',
     title: 'Software Engineer',
     date: 'Octiber 2022 - Juny 2024',
-    description: ['bla bla bla', 'bla bla bla', 'bla bla bla'],
     company_logo: freelance,
-    site: 'https://tennet.id',
+    route: 'software',
   },
 ])
+const data = useCounterStore()
 </script>
 
 <template>
-  <div class="cards">
-    <div v-for="(event, index) in timelineEvents" :key="index" class="card">
-      <div class="content">
-        <img width="300" :src="event.company_logo as string" alt="" />
-        <div class="title">
-          <h3 class="title2">{{ event.title }}</h3>
-          <section>
-            <div class="company">
-              <div class="logo">
-                <p>{{ event.company }}</p>
+  <div>
+    <div v-if="data.current_porto != ''">
+      <RouterView />
+    </div>
+    <div v-else class="cards">
+      <div v-for="(event, index) in timelineEvents" :key="index" class="card">
+        <div class="content">
+          <img
+            @click="
+              () => {
+                data.set_current_porto(event.route)
+                router.push({ name: event.route })
+              }
+            "
+            width="300"
+            :src="event.company_logo as string"
+            alt=""
+          />
+          <div class="title">
+            <h3 class="title2">{{ event.title }}</h3>
+            <section>
+              <div class="company">
+                <div class="logo">
+                  <p>{{ event.company }}</p>
+                </div>
+                <p>{{ event.date }}</p>
               </div>
-              <p>{{ event.date }}</p>
-            </div>
-          </section>
-          <br />
-          <p class="description">Description:</p>
-          <p class="description" v-for="(d, i) in event.description" :key="i">
-            <span class="cir"></span> {{ d }}
-          </p>
+            </section>
+            <br />
+          </div>
         </div>
       </div>
     </div>
