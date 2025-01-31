@@ -12,6 +12,7 @@ import { useCounterStore } from '../stores/counter'
 import router from '@/router'
 import { RouterView } from 'vue-router'
 import api from '../assets/portofolio/api.png'
+import personals from '../assets/portofolio/personal-1.png'
 
 const freelance = [
   {
@@ -73,15 +74,15 @@ const tennet = [
 ]
 const personal = [
   {
-    img: api,
-    url: 'vault',
+    img: personals,
+    url: 'personal',
     name: 'Personal Site',
     year: '2023',
   },
   {
     img: api,
-    url: 'vault-management',
-    name: 'Wallet Api Express',
+    url: 'wallet',
+    name: 'Wallet Api',
     year: '2022-2023',
   },
 ]

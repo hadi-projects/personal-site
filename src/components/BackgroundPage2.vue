@@ -63,7 +63,28 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="futuristic-wave-gradient-background">
+  <div class="fluid-wave-gradient-background">
+    <svg
+      class="waves"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28"
+      preserveAspectRatio="none"
+      shape-rendering="auto"
+    >
+      <defs>
+        <path
+          id="gentle-wave"
+          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+        />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(37, 99, 235, 0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16, 185, 129, 0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(14, 165, 233, 0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255, 255, 255, 0.1)" />
+      </g>
+    </svg>
     <div class="particles-container">
       <transition-group name="particle" tag="div">
         <div
@@ -83,7 +104,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.futuristic-wave-gradient-background {
+.fluid-wave-gradient-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -93,28 +114,6 @@ onUnmounted(() => {
   background: linear-gradient(45deg, #1e3a8a, #2563eb, #10b981, #0ea5e9);
   background-size: 400% 400%;
   animation: gradientBackground 15s ease infinite;
-}
-
-.futuristic-wave-gradient-background::before,
-.futuristic-wave-gradient-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  opacity: 0.5;
-}
-
-.futuristic-wave-gradient-background::before {
-  filter: blur(20px);
-  animation: waveAnimation 8s ease-in-out infinite alternate;
-}
-
-.futuristic-wave-gradient-background::after {
-  filter: blur(40px);
-  animation: waveAnimation 12s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes gradientBackground {
@@ -129,12 +128,42 @@ onUnmounted(() => {
   }
 }
 
-@keyframes waveAnimation {
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -7px;
+  min-height: 100vh;
+  max-height: 150vh;
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
   0% {
-    transform: translateX(-25%) translateY(-25%) rotate(0deg);
+    transform: translate3d(-90px, 0, 0);
   }
   100% {
-    transform: translateX(25%) translateY(25%) rotate(360deg);
+    transform: translate3d(85px, 0, 0);
   }
 }
 
@@ -172,7 +201,7 @@ onUnmounted(() => {
   box-shadow:
     0 6px 12px rgba(0, 0, 0, 0.15),
     0 12px 24px rgba(0, 0, 0, 0.12);
-  /* transform: translateY(-5px); */
+  transform: translateY(-5px);
 }
 
 .particle {

@@ -92,6 +92,16 @@ const router = createRouter({
           name: 'landing',
           component: () => import('../views/portofolio/LandingView.vue')
         },
+        {
+          path: 'personal',
+          name: 'personal',
+          component: () => import('../views/portofolio/PersonalSiteView.vue')
+        },
+        {
+          path: 'wallet',
+          name: 'wallet',
+          component: () => import('../views/portofolio/WalletApiView.vue')
+        },
       ]
     },
     {
