@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import download from './assets/download.svg'
-import plus from './assets/plus.svg'
+import tele from './assets/tele.webp'
 const selected_nav = ref('/profile')
 import { useCounterStore } from './stores/counter'
 import BackgroundPage from './components/BackgroundPage.vue'
@@ -34,18 +33,18 @@ const navs = [
 ]
 const downloads = [
   {
-    name: 'Request Project',
-    icon: plus,
-    url: 'https://wa.me/+6281282115843',
+    name: 'Talk to Me on Telegram',
+    icon: tele,
+    url: 'https://t.me/pompompurinofficials',
   },
   {
-    name: 'Download CV',
-    icon: download,
-    url: 'https://drive.google.com/file/d/1vCwpYzrHagIMvjdQ-ff38euyZCVTQXfL/view?usp=sharing',
+    name: 'Check Out My Resume',
+    icon: '',
+    url: 'https://docs.google.com/document/d/1-X8peebLDH0Y5xyUyCmzPx_JTFdFmgDj8vUQxKviPmA/edit?usp=sharing',
   },
   {
-    name: 'Download Portofolio',
-    icon: download,
+    name: 'See My Work',
+    icon: '',
     url: 'https://www.figma.com/deck/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-25&t=VzYSw1M1PGXsjG20-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
   },
 ]
@@ -63,7 +62,7 @@ const redirect = (d: string) => {
         <h1>Personal Site</h1>
         <section>
           <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
-            <img width="16" :src="d.icon" alt="" />
+            <img v-if="d.icon" width="24" height="24" :src="d.icon" alt="" />
             {{ d.name }}</a
           >
         </section>
