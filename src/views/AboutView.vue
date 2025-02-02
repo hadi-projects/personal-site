@@ -53,7 +53,7 @@ section a {
   gap: 10px;
   background-color: #14b8a6;
 }
-p {
+/* p {
   font-size: 10px;
-}
+} */
 </style>

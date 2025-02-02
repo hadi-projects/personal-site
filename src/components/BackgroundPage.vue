@@ -194,12 +194,12 @@ onUnmounted(() => {
 }
 @media only screen and (max-width: 1100px) {
   .futuristic-wave-gradient-background {
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
     background: linear-gradient(45deg, #1e3a8a, #2563eb, #10b981, #0ea5e9);
     background-size: 400% 400%;
     animation: gradientBackground 15s ease infinite;
@@ -270,7 +270,7 @@ onUnmounted(() => {
   .content-wrapper {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
+    /* border-radius: 12px; */
     box-shadow:
       0 4px 8px rgba(0, 0, 0, 0.1),
       0 8px 16px rgba(0, 0, 0, 0.08);

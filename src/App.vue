@@ -162,7 +162,7 @@ header {
   align-items: flex-start;
   /* justify-content: center; */
   flex-direction: column;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   border-radius: 8px;
 }
 main {
@@ -193,24 +193,22 @@ header section {
   justify-items: center;
   /* flex-direction: column; */
 }
-.hidden {
-  display: none;
-}
+
 @media only screen and (max-width: 1100px) {
-  .logo {
+  /* .logo {
     display: flex;
     gap: 1rem;
     justify-items: center;
-  }
+  } */
   .logo svg {
-    display: flex;
+    display: none;
     /* width: 40px;
     height: 40px; */
   }
   nav {
     margin-left: auto;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-around;
     width: 100%;
     background-color: #0f172a;
@@ -225,7 +223,7 @@ header section {
       background 0.3s ease-in-out,
       transform 0.2s;
     border-bottom: transparent solid 1px;
-    display: none;
+    /* display: none; */
   }
 
   a:hover {
@@ -250,8 +248,8 @@ header section {
   .card {
     background-color: #1e293b;
     /* min-height: 100vh; */
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: flex-start;
     /* justify-content: center; */
@@ -285,8 +283,8 @@ header section {
     width: max-content;
     display: flex;
     justify-items: center;
-    flex-direction: column;
-    display: none;
+    /* flex-direction: column; */
+    /* display: none; */
   }
 }
 </style>
