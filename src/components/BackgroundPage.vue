@@ -82,6 +82,12 @@ onUnmounted(() => {
   </div>
 </template>
 
+<style>
+.hidden {
+  display: none;
+}
+</style>
+
 <style scoped>
 .futuristic-wave-gradient-background {
   position: fixed;

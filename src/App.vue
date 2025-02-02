@@ -33,17 +33,20 @@ const navs = [
 ]
 const downloads = [
   {
-    name: 'Talk to Me on Telegram',
+    name: 'Telegram',
+    // name: 'Talk to Me on Telegram',
     icon: tele,
     url: 'https://t.me/pompompurinofficials',
   },
   {
-    name: 'Check Out My Resume',
+    name: 'Resume',
+    // name: 'Check Out My Resume',
     icon: '',
     url: 'https://docs.google.com/document/d/1-X8peebLDH0Y5xyUyCmzPx_JTFdFmgDj8vUQxKviPmA/edit?usp=sharing',
   },
   {
-    name: 'See My Work',
+    name: 'Work',
+    // name: 'See My Work',
     icon: '',
     url: 'https://www.figma.com/deck/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-25&t=VzYSw1M1PGXsjG20-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
   },
@@ -76,13 +79,27 @@ const redirect = (d: string) => {
             />
           </svg>
 
-          <h1>Personal Site</h1>
+          <h1 class="hidden">Personal Site</h1>
         </div>
         <section>
           <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
-            <img v-if="d.icon" width="24" height="24" :src="d.icon" alt="" />
-            {{ d.name }}</a
-          >
+            {{ d.name }}
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.5 19.5186L19.5 4.51855M19.5 4.51855L8.25 4.51856M19.5 4.51855V15.7686"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
         </section>
       </header>
       <nav>
@@ -163,7 +180,7 @@ header {
   /* justify-content: center; */
   flex-direction: column;
   /* box-sizing: border-box; */
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 main {
   padding: 40px;
@@ -195,28 +212,23 @@ header section {
 }
 
 @media only screen and (max-width: 1100px) {
-  /* .logo {
-    display: flex;
-    gap: 1rem;
-    justify-items: center;
-  } */
   .logo svg {
     display: none;
-    /* width: 40px;
-    height: 40px; */
   }
   nav {
     margin-left: auto;
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-around;
     width: 100%;
     background-color: #0f172a;
+    overflow: scroll;
+    height: 50px;
   }
   a {
     color: white;
     text-decoration: none;
     width: 100%;
+    padding: 0.2rem 1rem;
     /* background: #14b8a6; */
     text-align: center;
     transition:
@@ -244,6 +256,8 @@ header section {
     justify-items: center;
     justify-content: space-between;
     gap: 10px;
+    /* font-size: small; */
+    overflow-x: scroll;
   }
   .card {
     background-color: #1e293b;
@@ -255,7 +269,7 @@ header section {
     /* justify-content: center; */
     flex-direction: column;
     box-sizing: border-box;
-    border-radius: 8px;
+    /* border-radius: 8px; */
   }
   main {
     padding: 40px;
@@ -268,23 +282,30 @@ header section {
   }
 
   header a {
-    background: transparent;
-    margin: 0 5px;
-    padding: 5px 10px;
+    /* margin: 0 5px; */
     width: fit-content;
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     justify-items: center;
+    justify-content: center;
     gap: 10px;
-    background-color: #14b8a6;
+    /* background-color: #14b8a6; */
   }
   header section {
     width: max-content;
     display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  header section a {
+    display: flex;
     justify-items: center;
-    /* flex-direction: column; */
-    /* display: none; */
+    background-color: transparent;
+    /* background-color: #14b8a6; */
+  }
+  svg {
+    width: 8px;
   }
 }
 </style>
