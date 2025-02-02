@@ -96,4 +96,68 @@ h6 {
 .divider {
   border-bottom: 1px #000 solid;
 }
+@media only screen and (max-width: 1100px) {
+  span {
+    color: #ebebeba3;
+    font-size: 14px;
+  }
+  .profile {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+  }
+  .pairs {
+    display: none;
+    /* padding-left: 20px; */
+  }
+  .role {
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 50%;
+    justify-content: space-around;
+  }
+  .name {
+    display: flex;
+    gap: 40px;
+    border-bottom: #3d3a3a solid 1px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .pair {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+  }
+  .pair img {
+    width: 20px;
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    padding: 2rem 4rem;
+  }
+  h1 {
+    /* font-size: 48px; */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    /* text-align: center; */
+  }
+  h6 {
+    text-align: center;
+  }
+  .divider {
+    border-bottom: 1px #000 solid;
+  }
+}
 </style>

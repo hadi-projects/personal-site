@@ -1,13 +1,17 @@
 # Personal Website
 
+![Screenshoot](./src/assets/profile.png)
+
 Welcome to the repository for my personal website! This project serves as a platform to showcase my resume, portfolio, and professional achievements. The site is designed to be minimalistic, user-friendly, and fully responsive.
 
 ## Features
 
-- **About Page**: Contains information about me and this website.
+- **Profile Section**: Contains information about me and this website.
+- **Experience Section**: Highlights some of the projects I've worked on.
 - **Portfolio Section**: Highlights some of the projects I've worked on.
-- **Resume Section**: Provides an overview of my professional experience and skills.
-- **Open Source**: The source code is open for learning, inspiration, and contributions.
+- **Certification Section**: Provides an overview of my professional experience and skills.
+- **Tools Section**: The source code is open for learning, inspiration, and contributions.
+- **About Section**: Contains information about me and this website.
 
 ## Technology Stack
 

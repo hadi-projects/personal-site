@@ -59,7 +59,25 @@ const redirect = (d: string) => {
   <background-page>
     <div class="card">
       <header>
-        <h1>Personal Site</h1>
+        <div class="logo">
+          <svg
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.75 5.26855H20.25M3.75 9.76855H20.25M3.75 14.2686H20.25M3.75 18.7686H20.25"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <h1>Personal Site</h1>
+        </div>
         <section>
           <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
             <img v-if="d.icon" width="24" height="24" :src="d.icon" alt="" />
@@ -90,6 +108,13 @@ const redirect = (d: string) => {
 </template>
 
 <style scoped>
+.logo {
+  display: flex;
+  gap: 1rem;
+}
+.logo svg {
+  display: none;
+}
 nav {
   margin-left: auto;
   display: flex;
@@ -132,7 +157,7 @@ header {
   background-color: #1e293b;
   /* min-height: 100vh; */
   height: 600px;
-  width: 1200px;
+  width: 1100px;
   display: flex;
   align-items: flex-start;
   /* justify-content: center; */
@@ -166,5 +191,102 @@ header section {
   width: max-content;
   display: flex;
   justify-items: center;
+  /* flex-direction: column; */
+}
+.hidden {
+  display: none;
+}
+@media only screen and (max-width: 1100px) {
+  .logo {
+    display: flex;
+    gap: 1rem;
+    justify-items: center;
+  }
+  .logo svg {
+    display: flex;
+    /* width: 40px;
+    height: 40px; */
+  }
+  nav {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #0f172a;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    /* background: #14b8a6; */
+    text-align: center;
+    transition:
+      background 0.3s ease-in-out,
+      transform 0.2s;
+    border-bottom: transparent solid 1px;
+    display: none;
+  }
+
+  a:hover {
+    border-bottom: #0d9488 solid 1px;
+    /* transform: translateY(-2px); */
+  }
+  .active {
+    border-bottom: #0d9488 solid 1px;
+  }
+  header {
+    background-color: #0f172a;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .card {
+    background-color: #1e293b;
+    /* min-height: 100vh; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: center; */
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+  main {
+    padding: 40px;
+    width: 100%;
+    overflow: auto;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  header a {
+    background: transparent;
+    margin: 0 5px;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-items: center;
+    gap: 10px;
+    background-color: #14b8a6;
+  }
+  header section {
+    width: max-content;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    display: none;
+  }
 }
 </style>
