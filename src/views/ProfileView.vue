@@ -2,7 +2,14 @@
   <div class="profile">
     <section class="left">
       <div class="name">
-        <img src="../assets/hadi.png" width="120" height="120" alt="" />
+        <div class="pro">
+          <img
+            src="https://avatars.githubusercontent.com/u/117066936?v=4"
+            width="120"
+            height="120"
+            alt=""
+          />
+        </div>
         <div class="role">
           <h1>Hadi Gunawan <span>(Software Engineer)</span></h1>
           <span>
@@ -37,6 +44,38 @@
         technical expertise, Hadi excels in soft skills such as teamwork, effective communication,
         project and time management, and leading teams to achieve project goals efficiently.
       </p>
+      <p>
+        Hadi Gunawan is a skilled software engineer with over 3 years of experience in designing,
+        developing, and deploying web and mobile applications. He is proficient in multiple
+        programming languages and modern software development frameworks, with extensive expertise
+        in building scalable solutions and deploying them to cloud platforms. In addition to his
+        technical expertise, Hadi excels in soft skills such as teamwork, effective communication,
+        project and time management, and leading teams to achieve project goals efficiently.
+      </p>
+      <p>
+        Hadi Gunawan is a skilled software engineer with over 3 years of experience in designing,
+        developing, and deploying web and mobile applications. He is proficient in multiple
+        programming languages and modern software development frameworks, with extensive expertise
+        in building scalable solutions and deploying them to cloud platforms. In addition to his
+        technical expertise, Hadi excels in soft skills such as teamwork, effective communication,
+        project and time management, and leading teams to achieve project goals efficiently.
+      </p>
+      <p>
+        Hadi Gunawan is a skilled software engineer with over 3 years of experience in designing,
+        developing, and deploying web and mobile applications. He is proficient in multiple
+        programming languages and modern software development frameworks, with extensive expertise
+        in building scalable solutions and deploying them to cloud platforms. In addition to his
+        technical expertise, Hadi excels in soft skills such as teamwork, effective communication,
+        project and time management, and leading teams to achieve project goals efficiently.
+      </p>
+      <p>
+        Hadi Gunawan is a skilled software engineer with over 3 years of experience in designing,
+        developing, and deploying web and mobile applications. He is proficient in multiple
+        programming languages and modern software development frameworks, with extensive expertise
+        in building scalable solutions and deploying them to cloud platforms. In addition to his
+        technical expertise, Hadi excels in soft skills such as teamwork, effective communication,
+        project and time management, and leading teams to achieve project goals efficiently.
+      </p>
     </section>
   </div>
 </template>
@@ -50,6 +89,7 @@ span {
   display: flex;
   width: 100%;
 }
+
 .left {
   width: 40%;
   display: flex;
@@ -108,6 +148,7 @@ h6 {
     display: flex;
     width: 100%;
     flex-direction: column;
+    gap: 1rem;
   }
   .left {
     width: 100%;
@@ -115,23 +156,38 @@ h6 {
     flex-direction: column;
     justify-content: center;
     justify-items: center;
+    border: #3d3a3a solid 1px;
+    border-radius: 8px;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
+    border: 1px solid rgba(20, 184, 166, 0.5);
   }
   .pairs {
     display: none;
     /* padding-left: 20px; */
   }
   .role {
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 100%;
     justify-content: space-around;
   }
   .name {
     display: flex;
-    gap: 40px;
-    border-bottom: #3d3a3a solid 1px;
     justify-content: center;
-    padding: 20px 0;
+    border-bottom: none;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    /* padding: 0; */
+    gap: 1rem;
+  }
+  .name .pro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
   }
   .pair {
     display: flex;
@@ -147,7 +203,7 @@ h6 {
     flex-direction: column;
     justify-items: center;
     width: 100%;
-    padding: 2rem 4rem;
+    padding: 0;
   }
   h1 {
     /* font-size: 48px; */
@@ -160,7 +216,8 @@ h6 {
     text-align: center;
   }
   .divider {
-    border-bottom: 1px #000 solid;
+    display: none;
+    border-bottom: none;
   }
 }
 </style>

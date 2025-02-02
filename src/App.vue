@@ -221,8 +221,8 @@ header section {
     justify-content: space-around;
     width: 100%;
     background-color: #0f172a;
-    overflow: scroll;
-    height: 50px;
+    overflow-x: scroll;
+    min-height: 35px;
   }
   a {
     color: white;
@@ -257,7 +257,7 @@ header section {
     justify-content: space-between;
     gap: 10px;
     /* font-size: small; */
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
   }
   .card {
     background-color: #1e293b;
@@ -272,7 +272,7 @@ header section {
     /* border-radius: 8px; */
   }
   main {
-    padding: 40px;
+    padding: 20px;
     width: 100%;
     overflow: auto;
   }

@@ -198,6 +198,10 @@ onUnmounted(() => {
 .particle-leave-to {
   opacity: 0;
 }
+
+/* =================== */
+/* =================== */
+/* =================== */
 @media only screen and (max-width: 1100px) {
   .futuristic-wave-gradient-background {
     position: fixed;
@@ -264,13 +268,14 @@ onUnmounted(() => {
 
   .content-container {
     overflow-x: scroll;
-    position: relative;
+    /* position: relative; */
     z-index: 2;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
 
   .content-wrapper {
@@ -283,7 +288,7 @@ onUnmounted(() => {
     transition:
       box-shadow 0.3s ease-in-out,
       transform 0.3s ease-in-out;
-    padding: 20px;
+    padding: 0;
   }
 
   .content-wrapper:hover {
