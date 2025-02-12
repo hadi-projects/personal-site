@@ -25,7 +25,7 @@ import hive from '../assets/tools/hive.png'
 import mysql from '../assets/tools/mysql.png'
 import idcloudhost from '../assets/tools/idcloudhost.png'
 import mongo from '../assets/tools/mongo.png'
-import CardComponent from '@/components/CardComponent.vue'
+import CardComponent2 from '@/components/CardComponent2.vue'
 
 const all = [
   {
@@ -209,8 +209,13 @@ const alls = [
     </div>
     <div class="content">
       <div class="cards" v-for="(e, j) in alls" :key="j">
-        <CardComponent v-if="e.type == selected_nav" :selected_nav="selected_nav" :data="e" />
-        <CardComponent v-else :selected_nav="selected_nav" :data="e" />
+        <CardComponent2 :img="e.img" v-if="selected_nav == 'all'" />
+        <CardComponent2
+          :img="e.img"
+          v-else-if="selected_nav == e.type"
+          :title="e.name"
+          :description="e.type"
+        />
       </div>
     </div>
   </div>
