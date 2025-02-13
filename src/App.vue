@@ -240,7 +240,6 @@ footer {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    background-color: #0f172a;
     overflow-x: scroll;
     min-height: 35px;
   }
@@ -276,20 +275,16 @@ footer {
     justify-items: center;
     justify-content: space-between;
     gap: 10px;
-    /* font-size: small; */
-    /* overflow-x: scroll; */
+    height: 50px;
   }
   .card {
     background-color: #1e293b;
-    /* min-height: 100vh; */
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: flex-start;
-    /* justify-content: center; */
     flex-direction: column;
     box-sizing: border-box;
-    /* border-radius: 8px; */
   }
   main {
     padding: 20px;
