@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import router from '@/router'
-
 defineProps({
   img: {
-    type: Object,
+    type: String,
     default: null,
   },
   title: {
@@ -18,18 +16,16 @@ defineProps({
     type: String,
     default: '',
   },
-  route: {
-    type: String,
-    default: '',
+  onclick: {
+    type: Function,
+    default: () => {},
   },
-  ext_route: {
+  show_button: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 })
-const rd = (d: string) => {
-  window.open(d, '_blank')
-}
+
 const shortenText = (text: string, maxLength: number = 20) => {
   if (text.length <= maxLength) {
     return text
@@ -42,7 +38,7 @@ const shortenText = (text: string, maxLength: number = 20) => {
   <div class="card">
     <div class="wr">
       <div class="loader"></div>
-      <img :src="img" />
+      <img :src="img" :alt="title" />
     </div>
     <div class="title">
       <div class="tooltip">
@@ -51,24 +47,21 @@ const shortenText = (text: string, maxLength: number = 20) => {
       </div>
       <p>{{ description }}</p>
       <p>{{ date }}</p>
-      <a
-        v-if="route != ''"
-        @click="
-          () => {
-            if (ext_route == false) {
-              router.push({ name: route })
-            } else if (ext_route == true) {
-              rd(route)
-            }
-          }
-        "
-        >More</a
-      >
+      <div class="btn" v-if="show_button == true">
+        <a @click="onclick()">Detail</a>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.share {
+  width: max-content;
+}
+.btn {
+  display: flex;
+  gap: 0.5rem;
+}
 h3 {
   font-weight: bold;
 }

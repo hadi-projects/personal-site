@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import router from '@/router'
 import lapor from '../assets/portofolio/lapor.png'
 import sivisat from '../assets/portofolio/sivisat.png'
 import blog_kampus from '../assets/portofolio/blog kampus.png'
@@ -102,10 +103,16 @@ const data = useCounterStore()
         <CardComponent2
           v-for="(d, i) in personal"
           :key="i"
-          :img="d.img"
           :title="d.name"
           :description="d.year"
+          :img="d.img"
           :route="d.url"
+          :onclick="
+            () => {
+              data.current_porto = d.url
+              router.push({ name: d.url })
+            }
+          "
         />
       </div>
       <header>
@@ -128,8 +135,8 @@ const data = useCounterStore()
       <div class="cards">
         <CardComponent2
           v-for="(d, i) in freelance"
-          :key="i"
           :img="d.img"
+          :key="i"
           :title="d.name"
           :description="d.year"
           :route="d.url"

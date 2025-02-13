@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import router from '@/router'
 import { reactive } from 'vue'
 import tennet_logo from '../assets/tennet.png'
 import freelance from '../assets/freelance.png'
@@ -9,9 +10,10 @@ interface TimelineEvent {
   title: string
   date: string
   company: string
-  company_logo: object
+  company_logo: string
   route: string
 }
+console.log('sekali')
 
 const timelineEvents: TimelineEvent[] = reactive([
   {
@@ -51,6 +53,11 @@ const timelineEvents: TimelineEvent[] = reactive([
   },
 ])
 const data = useCounterStore()
+import { onBeforeUnmount } from 'vue'
+onBeforeUnmount(() => {
+  console.log('Component is about to be unmounted')
+  // Perform cleanup tasks like removing event listeners, stopping timers, etc.
+})
 </script>
 
 <template>
@@ -65,7 +72,13 @@ const data = useCounterStore()
         :key="index"
         :description="event.company"
         :title="event.title"
-        :img="event.company_logo as object"
+        :img="event.company_logo"
+        :onclick="
+          () => {
+            data.current_porto = event.route
+            router.push({ name: event.route })
+          }
+        "
       />
     </div>
   </div>

@@ -82,6 +82,7 @@ const redirect = (d: string) => {
           <h1 class="hidden">Personal Site</h1>
         </div>
         <section>
+          <!-- <a> Blog (soon)</a> -->
           <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
             {{ d.name }}
             <svg

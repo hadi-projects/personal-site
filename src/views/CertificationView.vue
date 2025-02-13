@@ -58,6 +58,9 @@ const certificates = [
     year: '2020',
   },
 ]
+const redirect = (v: string) => {
+  window.open(v, '_blank')
+}
 </script>
 
 <template>
@@ -74,6 +77,13 @@ const certificates = [
         :img="d.img"
         :route="d.img"
         :ext_route="true"
+        :onclick="
+          () => {
+            console.log(d.img)
+
+            redirect(d.img)
+          }
+        "
       />
     </div>
   </div>

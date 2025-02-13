@@ -56,7 +56,12 @@ const all = [
 
 const selected_nav = ref('programming language')
 
-const alls = [
+interface Tool {
+  name: string
+  img: string
+  type: string
+}
+const alls: Tool[] = [
   {
     name: 'HTML',
     img: html,
@@ -201,7 +206,7 @@ const alls = [
           "
           v-for="(d, i) in all"
           :key="i"
-          :class="[selected_nav == d.type ? 'active' : '']"
+          :class="[selected_nav == d.type ? 'active' : 'tab']"
           :to="''"
           >{{ d.name }}</a
         >
@@ -210,10 +215,11 @@ const alls = [
     <div class="content">
       <div :class="[selected_nav == e.type ? 'cards' : 'none']" v-for="(e, j) in alls" :key="j">
         <CardComponent2
-          :img="e.img"
           v-if="selected_nav == e.type"
+          :img="e.img"
           :title="e.name"
           :description="e.type"
+          :show_button="false"
         />
       </div>
     </div>
@@ -221,12 +227,15 @@ const alls = [
 </template>
 
 <style scoped>
+.tab {
+}
 .none {
   display: none;
 }
 .group {
   display: flex;
   justify-content: space-around;
+  overflow: scroll;
 }
 nav {
   margin-left: auto;
@@ -236,9 +245,12 @@ nav {
 }
 
 a {
+  padding: 0.5rem 1rem;
+  width: max-content;
+  white-space: nowrap;
   color: white;
   text-decoration: none;
-  width: 100%;
+  cursor: pointer;
   /* background: #14b8a6; */
   text-align: center;
   transition:
