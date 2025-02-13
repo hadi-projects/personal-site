@@ -26,7 +26,7 @@ defineProps({
   },
 })
 
-const shortenText = (text: string, maxLength: number = 20) => {
+const shortenText = (text: string, maxLength: number = 15) => {
   if (text.length <= maxLength) {
     return text
   }
@@ -43,7 +43,7 @@ const shortenText = (text: string, maxLength: number = 20) => {
     <div class="title">
       <div class="tooltip">
         <h3>{{ shortenText(title) }}</h3>
-        <span v-if="title.length > 20" class="tooltiptext">{{ title }}</span>
+        <span v-if="title.length > 15" class="tooltiptext">{{ title }}</span>
       </div>
       <p>{{ description }}</p>
       <p>{{ date }}</p>
@@ -211,7 +211,7 @@ a {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
     border: 1px solid rgba(20, 184, 166, 0.5);
-    width: 180px;
+    width: 160px;
   }
   .title {
     font-size: 12px;
@@ -223,6 +223,8 @@ a {
   img {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    width: 160px;
+    height: 120px;
     z-index: 1;
     object-fit: cover;
   }
@@ -244,7 +246,7 @@ a {
   .wr {
     position: relative;
     max-width: 240px;
-    height: 180px;
+    height: 120px;
     background: #000;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -259,7 +261,7 @@ a {
     height: 30px;
     padding: 8px;
     aspect-ratio: 1;
-    top: 100px;
+    top: 50px;
     border-radius: 50%;
     background: #828b8a;
     --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;

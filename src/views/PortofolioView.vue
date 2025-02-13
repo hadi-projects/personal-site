@@ -179,7 +179,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
   }
   .progress {
     width: 240px;
