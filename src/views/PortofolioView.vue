@@ -161,4 +161,50 @@ const data = useCounterStore()
 header {
   margin: 2rem 1rem 0 0;
 }
+
+/* =================== */
+/* =================== */
+/* =================== */
+@media only screen and (max-width: 1100px) {
+  .title {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header {
+    padding: 1rem 0;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 80px;
+  }
+  .progress {
+    width: 240px;
+    height: 178.5px;
+    background-color: #f7f6f6;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: rgb(92, 87, 87);
+  }
+  .progress p {
+    margin-top: 5rem;
+  }
+  img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+  }
+  .title h3 {
+    font-size: 14px;
+  }
+  .title p {
+    font-size: 12px;
+  }
+}
 </style>

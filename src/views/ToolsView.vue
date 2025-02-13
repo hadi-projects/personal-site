@@ -227,8 +227,6 @@ const alls: Tool[] = [
 </template>
 
 <style scoped>
-.tab {
-}
 .none {
   display: none;
 }
@@ -290,5 +288,31 @@ a:hover {
 }
 .hidden {
   display: none;
+}
+
+/* =================== */
+/* =================== */
+/* =================== */
+@media only screen and (max-width: 1100px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 80px;
+  }
+  .title {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header {
+    padding: 1rem 0;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 </style>

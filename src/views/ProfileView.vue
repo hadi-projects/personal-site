@@ -129,7 +129,7 @@ span {
 .name {
   display: flex;
   gap: 40px;
-  border-bottom: #3d3a3a solid 1px;
+  border-bottom: #495454 solid 1px;
   padding: 20px 0;
 }
 .pair {

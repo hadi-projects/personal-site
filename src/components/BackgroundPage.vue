@@ -32,24 +32,6 @@ const updateParticles = () => {
   animationFrame = requestAnimationFrame(updateParticles)
 }
 
-interface Particle {
-  id: number
-  x: number
-  y: number
-  size: number
-  speed: number
-  opacity: number
-}
-
-const getParticleStyle = (particle: Particle) => ({
-  left: `${particle.x}%`,
-  top: `${particle.y}%`,
-  width: `${particle.size}px`,
-  height: `${particle.size}px`,
-  opacity: particle.opacity,
-  background: props.particleColor,
-})
-
 onMounted(() => {
   initParticles()
   updateParticles()
@@ -64,16 +46,6 @@ onUnmounted(() => {
 
 <template>
   <div class="futuristic-wave-gradient-background">
-    <div class="particles-container">
-      <transition-group name="particle" tag="div">
-        <div
-          v-for="particle in particles"
-          :key="particle.id"
-          class="particle"
-          :style="getParticleStyle(particle)"
-        ></div>
-      </transition-group>
-    </div>
     <div class="content-container">
       <div class="content-wrapper">
         <slot></slot>
@@ -210,9 +182,9 @@ onUnmounted(() => {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(45deg, #1e3a8a, #2563eb, #10b981, #0ea5e9);
+    background: none;
     background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
+    animation: none;
   }
 
   .futuristic-wave-gradient-background::before,
@@ -229,41 +201,12 @@ onUnmounted(() => {
 
   .futuristic-wave-gradient-background::before {
     filter: blur(20px);
-    animation: waveAnimation 8s ease-in-out infinite alternate;
+    animation: none;
   }
 
   .futuristic-wave-gradient-background::after {
     filter: blur(40px);
-    animation: waveAnimation 12s ease-in-out infinite alternate-reverse;
-  }
-
-  @keyframes gradientBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  @keyframes waveAnimation {
-    0% {
-      transform: translateX(-25%) translateY(-25%) rotate(0deg);
-    }
-    100% {
-      transform: translateX(25%) translateY(25%) rotate(360deg);
-    }
-  }
-
-  .particles-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow-x: scroll;
+    animation: none;
   }
 
   .content-container {

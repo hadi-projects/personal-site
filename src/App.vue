@@ -82,7 +82,6 @@ const redirect = (d: string) => {
           <h1 class="hidden">Personal Site</h1>
         </div>
         <section>
-          <!-- <a> Blog (soon)</a> -->
           <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
             {{ d.name }}
             <svg
@@ -120,12 +119,23 @@ const redirect = (d: string) => {
       </nav>
       <main>
         <RouterView />
+        <footer>
+          Hadi Gunawan 2025 |
+          <span
+            @click="redirect('https://github.com/hadi-projects/personal-site/fork')"
+            class="fork"
+            >Fork this repository</span
+          >
+        </footer>
       </main>
     </div>
   </background-page>
 </template>
 
 <style scoped>
+.fork {
+  cursor: pointer;
+}
 .logo {
   display: flex;
   gap: 1rem;
@@ -184,9 +194,13 @@ header {
   /* border-radius: 8px; */
 }
 main {
-  padding: 40px;
   width: 100%;
   overflow: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 h1 {
   font-size: 18px;
@@ -212,6 +226,16 @@ header section {
   /* flex-direction: column; */
 }
 
+footer {
+  margin: 2rem 0 0.5rem 0;
+  border-top: #495454 solid 1px;
+}
+
+/* ========== */
+/* ========== */
+/* ========== */
+/* ========== */
+/* ========== */
 @media only screen and (max-width: 1100px) {
   .logo svg {
     display: none;
