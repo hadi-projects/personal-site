@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import back from '../../assets/back.svg'
-import router from '@/router'
 import { useCounterStore } from '../../stores/counter'
 import sivisat1 from '../../assets/portofolio/sivisat-1.jpg'
 import sivisat2 from '../../assets/portofolio/sivisat-2.jpg'
@@ -12,15 +11,7 @@ const data = useCounterStore()
 <template>
   <div>
     <div class="nav">
-      <img
-        @click="
-          () => {
-            router.push('/portofolio')
-            data.set_current_porto('')
-          }
-        "
-        :src="back"
-      />
+      <img @click="() => data.set_current_route('portofolio')" :src="back" />
       <h2>Sivisat</h2>
     </div>
     <div class="body">

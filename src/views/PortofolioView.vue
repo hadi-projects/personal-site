@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import router from '@/router'
 import lapor from '../assets/portofolio/lapor.png'
 import sivisat from '../assets/portofolio/sivisat.png'
 import blog_kampus from '../assets/portofolio/blog kampus.png'
@@ -10,7 +9,6 @@ import vault_management from '../assets/portofolio/vault management.png'
 import landing from '../assets/portofolio/landing.png'
 import palalu from '../assets/portofolio/palalu.png'
 import { useCounterStore } from '../stores/counter'
-import { RouterView } from 'vue-router'
 import api from '../assets/portofolio/api.png'
 import personals from '../assets/portofolio/personal-1.png'
 import CardComponent2 from '@/components/CardComponent2.vue'
@@ -87,15 +85,27 @@ const personal = [
     year: '2022-2023',
   },
 ]
+import { onBeforeMount, onMounted } from 'vue'
+
+onMounted(() => {
+  window.addEventListener('popstate', handleBack)
+})
+onBeforeMount(() => {
+  window.removeEventListener('popstate', handleBack)
+})
+
+const handleBack = () => {
+  data.set_current_route('portofolio')
+}
 const data = useCounterStore()
 </script>
 
 <template>
   <div class="portofolio">
-    <div v-if="data.current_porto != ''">
+    <div v-if="data.current_route != 'portofolio'">
       <RouterView />
     </div>
-    <div v-else>
+    <div v-if="data.current_route == 'portofolio'">
       <header>
         <h2>Personal Project</h2>
       </header>
@@ -107,12 +117,7 @@ const data = useCounterStore()
           :description="d.year"
           :img="d.img"
           :route="d.url"
-          :onclick="
-            () => {
-              data.current_porto = d.url
-              router.push({ name: d.url })
-            }
-          "
+          :onclick="() => data.set_current_route(d.url)"
         />
       </div>
       <header>
@@ -126,6 +131,7 @@ const data = useCounterStore()
           :title="d.name"
           :description="d.year"
           :route="d.url"
+          :onclick="() => data.set_current_route(d.url)"
         />
       </div>
       <br />
@@ -140,6 +146,7 @@ const data = useCounterStore()
           :title="d.name"
           :description="d.year"
           :route="d.url"
+          :onclick="() => data.set_current_route(d.url)"
         />
       </div>
     </div>
@@ -180,31 +187,6 @@ header {
     flex-wrap: wrap;
     gap: 10px;
     /* margin-bottom: 80px; */
-  }
-  .progress {
-    width: 240px;
-    height: 178.5px;
-    background-color: #f7f6f6;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    color: rgb(92, 87, 87);
-  }
-  .progress p {
-    margin-top: 5rem;
-  }
-  img {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    cursor: pointer;
-  }
-  .title h3 {
-    font-size: 14px;
-  }
-  .title p {
-    font-size: 12px;
   }
 }
 </style>

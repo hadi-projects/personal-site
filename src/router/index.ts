@@ -10,10 +10,12 @@ const router = createRouter({
     },
     {
       path: '/profile',
+      name: 'profile',
       component: ProfileView
     },
     {
       path: '/experience',
+      name: 'experience',
       component: () => import('../views/ExperienceView.vue'),
       children: [
         {
@@ -45,6 +47,7 @@ const router = createRouter({
     },
     {
       path: '/portofolio',
+      name: 'portofolio',
       component: () => import('../views/PortofolioView.vue'),
       children: [
         {
@@ -106,14 +109,17 @@ const router = createRouter({
     },
     {
       path: '/certification',
+      name: 'certification',
       component: () => import('../views/CertificationView.vue')
     },
     {
       path: '/tools',
+      name: 'tools',
       component: () => import('../views/ToolsView.vue')
     },
     {
       path: '/about',
+      name: 'about',
       component: () => import('../views/AboutView.vue')
     },
   ],

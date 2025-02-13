@@ -1,52 +1,52 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import tele from './assets/tele.webp'
-const selected_nav = ref('/profile')
 import { useCounterStore } from './stores/counter'
 import BackgroundPage from './components/BackgroundPage.vue'
+import router from './router'
+import { onMounted } from 'vue'
 
 const navs = [
   {
     name: 'Profile',
-    route: '/profile',
+    route: 'profile',
   },
   {
     name: 'Experience',
-    route: '/experience',
+    route: 'experience',
   },
   {
     name: 'Portofolio',
-    route: '/portofolio',
+    route: 'portofolio',
   },
   {
     name: 'Certification',
-    route: '/certification',
+    route: 'certification',
   },
   {
     name: 'Tools',
-    route: '/tools',
+    route: 'tools',
   },
   {
     name: 'About',
-    route: '/about',
+    route: 'about',
   },
 ]
+onMounted(() => {
+  data.set_current_route(router.currentRoute.value.name as string)
+})
 const downloads = [
   {
     name: 'Telegram',
-    // name: 'Talk to Me on Telegram',
     icon: tele,
     url: 'https://t.me/pompompurinofficials',
   },
   {
     name: 'Resume',
-    // name: 'Check Out My Resume',
     icon: '',
     url: 'https://docs.google.com/document/d/1-X8peebLDH0Y5xyUyCmzPx_JTFdFmgDj8vUQxKviPmA/edit?usp=sharing',
   },
   {
     name: 'Work',
-    // name: 'See My Work',
     icon: '',
     url: 'https://www.figma.com/deck/VduiWxGnJsr9uiIwLHphVX/Porto?node-id=1-25&t=VzYSw1M1PGXsjG20-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
   },
@@ -82,7 +82,7 @@ const redirect = (d: string) => {
           <h1 class="hidden">Personal Site</h1>
         </div>
         <section>
-          <a v-for="(d, i) in downloads" :key="i" @click="redirect(d.url)">
+          <a v-for="(d, i) in downloads" :key="i" @click="() => data.set_current_route(d.url)">
             {{ d.name }}
             <svg
               width="24"
@@ -104,15 +104,10 @@ const redirect = (d: string) => {
       </header>
       <nav>
         <router-link
-          @click="
-            () => {
-              selected_nav = d.route
-              data.set_current_porto('')
-            }
-          "
+          @click="() => data.set_current_route(d.route)"
           v-for="(d, i) in navs"
           :key="i"
-          :class="[selected_nav == d.route ? 'active' : '']"
+          :class="[data.current_route == d.route ? 'active' : '']"
           :to="d.route"
           >{{ d.name }}</router-link
         >

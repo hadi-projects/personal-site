@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import back from '../../assets/back.svg'
-import router from '@/router'
 import { useCounterStore } from '../../stores/counter'
 
 const data = useCounterStore()
@@ -9,15 +8,7 @@ const data = useCounterStore()
 <template>
   <div>
     <div class="nav">
-      <img
-        @click="
-          () => {
-            router.push('/experience')
-            data.set_current_porto('')
-          }
-        "
-        :src="back"
-      />
+      <img @click="() => data.set_current_route('experience')" :src="back" />
       <h2>Software Engineer</h2>
     </div>
     <div class="body">

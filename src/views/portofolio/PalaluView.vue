@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import back from '../../assets/back.svg'
-import router from '@/router'
 import { useCounterStore } from '../../stores/counter'
 import palalu1 from '../../assets/portofolio/palalu-1.png'
 import palalu2 from '../../assets/portofolio/palalu-2.png'
@@ -13,15 +12,7 @@ const data = useCounterStore()
 <template>
   <div>
     <div class="nav">
-      <img
-        @click="
-          () => {
-            router.push('/portofolio')
-            data.set_current_porto('')
-          }
-        "
-        :src="back"
-      />
+      <img @click="() => data.set_current_route('portofolio')" :src="back" />
       <h2>Palalu - Culturally Adapted E-Commerce Platform</h2>
     </div>
     <div class="body">

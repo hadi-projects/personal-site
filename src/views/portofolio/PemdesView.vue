@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import back from '../../assets/back.svg'
-import router from '@/router'
 import { useCounterStore } from '../../stores/counter'
 import pemdes1 from '../../assets/portofolio/pemdes-1.jpg'
 
@@ -10,15 +9,7 @@ const data = useCounterStore()
 <template>
   <div>
     <div class="nav">
-      <img
-        @click="
-          () => {
-            router.push('/portofolio')
-            data.set_current_porto('')
-          }
-        "
-        :src="back"
-      />
+      <img @click="() => data.set_current_route('portofolio')" :src="back" />
       <h2>Form Pendes - Village Election Management Application</h2>
     </div>
     <div class="body">

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import router from '@/router'
 import { reactive } from 'vue'
 import tennet_logo from '../assets/tennet.png'
 import freelance from '../assets/freelance.png'
@@ -13,7 +12,6 @@ interface TimelineEvent {
   company_logo: string
   route: string
 }
-console.log('sekali')
 
 const timelineEvents: TimelineEvent[] = reactive([
   {
@@ -53,16 +51,23 @@ const timelineEvents: TimelineEvent[] = reactive([
   },
 ])
 const data = useCounterStore()
-import { onBeforeUnmount } from 'vue'
-onBeforeUnmount(() => {
-  console.log('Component is about to be unmounted')
-  // Perform cleanup tasks like removing event listeners, stopping timers, etc.
+import { onBeforeMount, onMounted } from 'vue'
+
+onMounted(() => {
+  window.addEventListener('popstate', handleBack)
 })
+onBeforeMount(() => {
+  window.removeEventListener('popstate', handleBack)
+})
+
+const handleBack = () => {
+  data.set_current_route('experience')
+}
 </script>
 
 <template>
   <div>
-    <div v-if="data.current_porto != ''">
+    <div v-if="data.current_route != 'experience'">
       <RouterView />
     </div>
     <div v-else class="cards">
@@ -73,12 +78,7 @@ onBeforeUnmount(() => {
         :description="event.company"
         :title="event.title"
         :img="event.company_logo"
-        :onclick="
-          () => {
-            data.current_porto = event.route
-            router.push({ name: event.route })
-          }
-        "
+        :onclick="() => data.set_current_route(event.route)"
       />
     </div>
   </div>
