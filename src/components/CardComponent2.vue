@@ -22,7 +22,20 @@ defineProps({
     type: String,
     default: '',
   },
+  ext_route: {
+    type: Boolean,
+    default: false,
+  },
 })
+const rd = (d: string) => {
+  window.open(d, '_blank')
+}
+const shortenText = (text: string, maxLength: number = 20) => {
+  if (text.length <= maxLength) {
+    return text
+  }
+  return text.substring(0, maxLength - 3) + '...'
+}
 </script>
 
 <template>
@@ -32,14 +45,21 @@ defineProps({
       <img :src="img" />
     </div>
     <div class="title">
-      <h3>{{ title }}</h3>
+      <div class="tooltip">
+        <h3>{{ shortenText(title) }}</h3>
+        <span v-if="title.length > 20" class="tooltiptext">{{ title }}</span>
+      </div>
       <p>{{ description }}</p>
       <p>{{ date }}</p>
       <a
         v-if="route != ''"
         @click="
           () => {
-            router.push({ name: route })
+            if (ext_route == false) {
+              router.push({ name: route })
+            } else if (ext_route == true) {
+              rd(route)
+            }
           }
         "
         >More</a
@@ -57,14 +77,13 @@ h3 {
   background-color: #1e293b;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  cursor: pointer;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
   border: 1px solid rgba(20, 184, 166, 0.5);
   width: 240px;
 }
 .card:hover {
-  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
+  /* box-shadow: 0 0 25px rgba(20, 184, 166, 0.6); */
 }
 .title {
   padding: 0.4rem;
@@ -75,7 +94,6 @@ h3 {
 img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  cursor: pointer;
   z-index: 1;
 
   width: 100%;
@@ -102,7 +120,6 @@ a {
   background: #000;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -128,5 +145,53 @@ a {
   to {
     transform: rotate(1turn);
   }
+}
+
+/* -- */
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 </style>

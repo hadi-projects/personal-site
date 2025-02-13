@@ -59,33 +59,6 @@ const data = useCounterStore()
       <RouterView />
     </div>
     <div v-else class="cards">
-      <!-- <div v-for="(event, index) in timelineEvents" :key="index" class="card">
-        <div class="content">
-          <img
-            @click="
-              () => {
-                data.set_current_porto(event.route)
-                router.push({ name: event.route })
-              }
-            "
-            width="300"
-            :src="event.company_logo as string"
-            alt=""
-          />
-          <div class="title">
-            <h3 class="title2">{{ event.title }}</h3>
-            <section>
-              <div class="company">
-                <div class="logo">
-                  <p>{{ event.company }}</p>
-                </div>
-                <p>{{ event.date }}</p>
-              </div>
-            </section>
-            <br />
-          </div>
-        </div>
-      </div> -->
       <CardComponent2
         v-for="(event, index) in timelineEvents"
         :route="event.route"
@@ -109,33 +82,6 @@ const data = useCounterStore()
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-.card {
-  border-radius: 12px;
-  background-color: #1e293b;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
-  border: 1px solid rgba(20, 184, 166, 0.5);
-}
-.card:hover {
-  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
-}
-.title {
-  font-weight: bold;
-  padding: 0.4rem;
-}
-.date {
-  font-size: 10px;
-}
-section .company {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-}
-.description {
-  font-size: 10px;
 }
 .cir {
   width: 4px;

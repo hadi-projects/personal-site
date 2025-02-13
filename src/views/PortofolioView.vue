@@ -145,29 +145,6 @@ const data = useCounterStore()
   gap: 2rem;
   flex-wrap: wrap;
 }
-.card {
-  border-radius: 12px;
-  background-color: #1e293b;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
-  border: 1px solid rgba(20, 184, 166, 0.5);
-}
-.card:hover {
-  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
-}
-img {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  cursor: pointer;
-}
-.title {
-  padding: 0.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .title h3 {
   font-size: 14px;
 }

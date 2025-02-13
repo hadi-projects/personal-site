@@ -73,6 +73,7 @@ const certificates = [
         :key="i"
         :img="d.img"
         :route="d.img"
+        :ext_route="true"
       />
     </div>
   </div>
@@ -92,19 +93,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-.card {
-  border-radius: 12px;
-  background-color: #1e293b;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
-  border: 1px solid rgba(20, 184, 166, 0.5);
-  width: 240px;
-}
-.card:hover {
-  box-shadow: 0 0 25px rgba(20, 184, 166, 0.6);
 }
 .progress {
   width: 240px;
