@@ -3,13 +3,13 @@ import { reactive } from 'vue'
 import tennet_logo from '../assets/tennet.png'
 import freelance from '../assets/freelance.png'
 import { useCounterStore } from '../stores/counter'
-import router from '@/router'
+import CardComponent2 from '@/components/CardComponent2.vue'
 
 interface TimelineEvent {
   title: string
   date: string
   company: string
-  company_logo: unknown
+  company_logo: object
   route: string
 }
 
@@ -59,7 +59,7 @@ const data = useCounterStore()
       <RouterView />
     </div>
     <div v-else class="cards">
-      <div v-for="(event, index) in timelineEvents" :key="index" class="card">
+      <!-- <div v-for="(event, index) in timelineEvents" :key="index" class="card">
         <div class="content">
           <img
             @click="
@@ -85,7 +85,15 @@ const data = useCounterStore()
             <br />
           </div>
         </div>
-      </div>
+      </div> -->
+      <CardComponent2
+        v-for="(event, index) in timelineEvents"
+        :route="event.route"
+        :key="index"
+        :description="event.company"
+        :title="event.title"
+        :img="event.company_logo as object"
+      />
     </div>
   </div>
 </template>

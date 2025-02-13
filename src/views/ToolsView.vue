@@ -28,10 +28,10 @@ import mongo from '../assets/tools/mongo.png'
 import CardComponent2 from '@/components/CardComponent2.vue'
 
 const all = [
-  {
-    name: 'All',
-    type: 'all',
-  },
+  // {
+  //   name: 'All',
+  //   type: 'all',
+  // },
   {
     name: 'Programming Language',
     type: 'programming language',
@@ -54,7 +54,7 @@ const all = [
   },
 ]
 
-const selected_nav = ref('all')
+const selected_nav = ref('programming language')
 
 const alls = [
   {
@@ -208,11 +208,10 @@ const alls = [
       </nav>
     </div>
     <div class="content">
-      <div class="cards" v-for="(e, j) in alls" :key="j">
-        <CardComponent2 :img="e.img" v-if="selected_nav == 'all'" />
+      <div :class="[selected_nav == e.type ? 'cards' : 'none']" v-for="(e, j) in alls" :key="j">
         <CardComponent2
           :img="e.img"
-          v-else-if="selected_nav == e.type"
+          v-if="selected_nav == e.type"
           :title="e.name"
           :description="e.type"
         />
@@ -222,6 +221,9 @@ const alls = [
 </template>
 
 <style scoped>
+.none {
+  display: none;
+}
 .group {
   display: flex;
   justify-content: space-around;

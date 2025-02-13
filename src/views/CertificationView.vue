@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CardComponent2 from '@/components/CardComponent2.vue'
+
 const certificates = [
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-f4d80d51-698b-4082-8686-05d248706806.jpg?v=1738230696000',
@@ -56,9 +58,6 @@ const certificates = [
     year: '2020',
   },
 ]
-const redirect = (d: string) => {
-  window.open(d)
-}
 </script>
 
 <template>
@@ -67,14 +66,14 @@ const redirect = (d: string) => {
       <h2>Udemy Certifications</h2>
     </header>
     <div class="cards">
-      <div class="card" v-for="(d, i) in certificates" :key="i">
-        <div v-if="d.img == '..'" class="progress"><p>On Progress</p></div>
-        <img @click="redirect(d.img)" v-else :src="d.img" width="238" alt="" />
-        <div class="title">
-          <h3>{{ d.name }}</h3>
-          <p>{{ d.year }}</p>
-        </div>
-      </div>
+      <CardComponent2
+        v-for="(d, i) in certificates"
+        :title="d.name"
+        :description="d.year"
+        :key="i"
+        :img="d.img"
+        :route="d.img"
+      />
     </div>
   </div>
 </template>

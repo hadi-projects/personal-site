@@ -105,6 +105,7 @@ const data = useCounterStore()
           :img="d.img"
           :title="d.name"
           :description="d.year"
+          :route="d.url"
         />
       </div>
       <header>
@@ -117,6 +118,7 @@ const data = useCounterStore()
           :img="d.img"
           :title="d.name"
           :description="d.year"
+          :route="d.url"
         />
       </div>
       <br />
@@ -130,6 +132,7 @@ const data = useCounterStore()
           :img="d.img"
           :title="d.name"
           :description="d.year"
+          :route="d.url"
         />
       </div>
     </div>
