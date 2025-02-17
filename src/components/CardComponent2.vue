@@ -94,9 +94,8 @@ h3 {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
   border: 1px solid rgba(20, 184, 166, 0.5);
-  width: 240px;
+  /* width: 240px; */
 }
 .card:hover {
   /* box-shadow: 0 0 25px rgba(20, 184, 166, 0.6); */
@@ -232,7 +231,6 @@ a {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(20, 184, 166, 0.2); /* Soft neon glow */
     border: 1px solid rgba(20, 184, 166, 0.5);
     width: 160px;
   }

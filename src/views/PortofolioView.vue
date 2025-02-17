@@ -186,7 +186,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    /* margin-bottom: 80px; */
   }
 }
 </style>

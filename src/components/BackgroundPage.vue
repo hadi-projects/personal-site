@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useCounterStore } from '@/stores/counter'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
@@ -42,9 +43,43 @@ onUnmounted(() => {
     cancelAnimationFrame(animationFrame)
   }
 })
+const data = useCounterStore()
+const redirect = (d: string) => {
+  window.open(d)
+}
 </script>
 
 <template>
+  <div class="dialog-wrapper" v-if="data.show_dialog == true">
+    <div class="dialog">
+      <div class="head">
+        <h2>Hire Me</h2>
+        <svg
+          @click="data.set_show_dialog()"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 18.0068L18 6.00684M6 6.00684L18 18.0068"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="as">
+        <p @click="() => redirect('https://forms.gle/SSzFf4m8SqEtbMvu8')">
+          Smart Contract Development
+        </p>
+        <p @click="() => redirect('https://forms.gle/p5dHCkc9LKaQwfFA7')">Software Development</p>
+        <p @click="() => redirect('https://t.me/pompompurinofficials')">Talk by Telegram</p>
+      </div>
+    </div>
+  </div>
   <div class="futuristic-wave-gradient-background">
     <div class="content-container">
       <div class="content-wrapper">

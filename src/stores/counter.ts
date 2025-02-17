@@ -13,6 +13,11 @@ export const useCounterStore = defineStore('counter', () => {
     current_route.value = d
     router.push({ name: d })
   }
+  //
+  const show_dialog = ref(false)
+  function set_show_dialog() {
+    show_dialog.value = !show_dialog.value
+  }
 
-  return { count, doubleCount, current_route, increment, set_current_route }
+  return { count, doubleCount, current_route, increment, set_current_route, show_dialog, set_show_dialog }
 })
