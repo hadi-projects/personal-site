@@ -121,6 +121,7 @@ const redirect = (d: string) => {
 
 .dialog .head svg {
   width: 20px;
+  cursor: pointer;
 }
 
 .dialog .as {

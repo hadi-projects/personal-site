@@ -18,7 +18,6 @@ const r = (s: string) => {
         <div class="role">
           <div class="n">
             <h1>Hadi Gunawan</h1>
-            <!-- <span>(Software Engineer)</span> -->
           </div>
           <span>
             Designs, develops, and maintains software to create efficient, reliable, and scalable
@@ -197,7 +196,8 @@ svg {
   }
   .role {
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    text-align: center;
   }
   .name {
     display: flex;
@@ -206,7 +206,6 @@ svg {
     flex-direction: column;
     justify-items: center;
     width: 100%;
-    /* padding: 0; */
     gap: 1rem;
   }
   .name .pro {

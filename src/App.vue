@@ -236,7 +236,9 @@ header section {
 
 footer {
   margin: 2rem 0 0.5rem 0;
+  padding-top: 1rem;
   border-top: #495454 solid 1px;
+  width: 100%;
 }
 svg {
   width: 12px;
@@ -302,7 +304,7 @@ svg {
   main {
     padding: 20px;
     width: 100%;
-    /* overflow: auto; */
+    align-items: center;
   }
   h1 {
     font-size: 18px;
