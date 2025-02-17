@@ -194,23 +194,21 @@ const alls: Tool[] = [
 </script>
 
 <template>
-  <div class="profile">
+  <div class="tools">
     <h1>Common used tools</h1>
     <div class="group">
-      <nav>
-        <a
-          @click="
-            () => {
-              selected_nav = d.type
-            }
-          "
-          v-for="(d, i) in all"
-          :key="i"
-          :class="[selected_nav == d.type ? 'active' : 'tab']"
-          :to="''"
-          >{{ d.name }}</a
-        >
-      </nav>
+      <a
+        @click="
+          () => {
+            selected_nav = d.type
+          }
+        "
+        v-for="(d, i) in all"
+        :key="i"
+        :class="[selected_nav == d.type ? 'active' : 'tab']"
+        :to="''"
+        >{{ d.name }}</a
+      >
     </div>
     <div class="content">
       <div :class="[selected_nav == e.type ? 'cards' : 'none']" v-for="(e, j) in alls" :key="j">
@@ -227,22 +225,30 @@ const alls: Tool[] = [
 </template>
 
 <style scoped>
+.tools {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .none {
   display: none;
 }
 .group {
   display: flex;
   justify-content: space-around;
-  overflow: scroll;
+  overflow-x: scroll;
+  width: 100%;
+  height: 40px;
 }
-nav {
+/* nav {
   margin-left: auto;
   display: flex;
   justify-content: space-around;
   width: 100%;
-}
+} */
 
 a {
+  flex-wrap: wrap;
   padding: 0.5rem 1rem;
   width: max-content;
   white-space: nowrap;
