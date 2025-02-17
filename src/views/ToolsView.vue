@@ -26,6 +26,7 @@ import mysql from '../assets/tools/mysql.png'
 import idcloudhost from '../assets/tools/idcloudhost.png'
 import mongo from '../assets/tools/mongo.png'
 import CardComponent2 from '@/components/CardComponent2.vue'
+import docker from '../assets/docker.png'
 
 const all = [
   // {
@@ -183,6 +184,11 @@ const alls: Tool[] = [
   {
     name: 'Google Cloud Platform',
     img: gcp,
+    type: 'cloud',
+  },
+  {
+    name: 'Docker',
+    img: docker,
     type: 'cloud',
   },
   {
