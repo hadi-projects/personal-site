@@ -24,6 +24,10 @@ defineProps({
     type: Boolean,
     default: true,
   },
+  tags: {
+    type: Array,
+    default: Array.from([]),
+  },
 })
 
 const shortenText = (text: string, maxLength: number = 15) => {
@@ -45,8 +49,11 @@ const shortenText = (text: string, maxLength: number = 15) => {
         <h3>{{ shortenText(title) }}</h3>
         <span v-if="title.length > 15" class="tooltiptext">{{ title }}</span>
       </div>
-      <p>{{ description }}</p>
+      <p class="date">{{ description }}</p>
       <p>{{ date }}</p>
+      <div class="tag">
+        <p v-for="(d, i) in tags" :key="i">{{ d }}</p>
+      </div>
       <div class="btn" v-if="show_button == true">
         <a @click="onclick()">Detail</a>
       </div>
@@ -55,6 +62,22 @@ const shortenText = (text: string, maxLength: number = 15) => {
 </template>
 
 <style scoped>
+.tag {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.2rem 0;
+}
+.date {
+  font-size: 10px;
+}
+.tag p {
+  font-size: 8px;
+  color: white;
+  border: #0d9488 solid 1px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+}
 .share {
   width: max-content;
 }

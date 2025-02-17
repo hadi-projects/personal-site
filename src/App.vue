@@ -36,7 +36,7 @@ onMounted(() => {
 })
 const downloads = [
   {
-    name: 'Telegram',
+    name: 'Hire Me',
     icon: tele,
     url: 'https://t.me/pompompurinofficials',
   },
@@ -82,7 +82,7 @@ const redirect = (d: string) => {
           <h1 class="hidden">Personal Site</h1>
         </div>
         <section>
-          <a v-for="(d, i) in downloads" :key="i" @click="() => data.set_current_route(d.url)">
+          <a v-for="(d, i) in downloads" :key="i" @click="() => redirect(d.url)">
             {{ d.name }}
             <svg
               width="24"
@@ -205,7 +205,7 @@ h1 {
 header a {
   background: transparent;
   margin: 0 5px;
-  padding: 5px 10px;
+  padding: 8px 10px;
   width: fit-content;
   border-radius: 4px;
   cursor: pointer;
@@ -224,6 +224,9 @@ header section {
 footer {
   margin: 2rem 0 0.5rem 0;
   border-top: #495454 solid 1px;
+}
+svg {
+  width: 12px;
 }
 
 /* ========== */
@@ -244,31 +247,28 @@ footer {
     min-height: 35px;
   }
   a {
+    margin: 0;
+    padding: 1rem;
     color: white;
     text-decoration: none;
     width: 100%;
-    padding: 0.2rem 1rem;
-    /* background: #14b8a6; */
     text-align: center;
     transition:
       background 0.3s ease-in-out,
       transform 0.2s;
     border-bottom: transparent solid 1px;
-    /* display: none; */
   }
 
   a:hover {
     border-bottom: #0d9488 solid 1px;
-    /* transform: translateY(-2px); */
   }
   .active {
     border-bottom: #0d9488 solid 1px;
   }
   header {
-    background-color: #0f172a;
     width: 100%;
     color: white;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
     border-radius: 8px 8px 0 0;
     display: flex;
@@ -279,17 +279,17 @@ footer {
   }
   .card {
     background-color: #1e293b;
-    height: 100vh;
     width: 100vw;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    height: 100vh;
     box-sizing: border-box;
   }
   main {
     padding: 20px;
     width: 100%;
-    overflow: auto;
+    /* overflow: auto; */
   }
   h1 {
     font-size: 18px;
@@ -297,7 +297,6 @@ footer {
   }
 
   header a {
-    /* margin: 0 5px; */
     width: fit-content;
     border-radius: 4px;
     cursor: pointer;
@@ -305,7 +304,6 @@ footer {
     justify-items: center;
     justify-content: center;
     gap: 10px;
-    /* background-color: #14b8a6; */
   }
   header section {
     width: max-content;
@@ -317,7 +315,6 @@ footer {
     display: flex;
     justify-items: center;
     background-color: transparent;
-    /* background-color: #14b8a6; */
   }
   svg {
     width: 8px;

@@ -3,58 +3,75 @@ import CardComponent2 from '@/components/CardComponent2.vue'
 
 const certificates = [
   {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-6796ed64-3757-42da-b202-7c04860a1dc2.jpg?v=1739721456000',
+    name: `Ethereum and Solidity: The Complete Developer's Guide`,
+    year: '2025',
+    tags: ['solidity', 'smart contracts', 'web3', 'blockchain'],
+  },
+  {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-f4d80d51-698b-4082-8686-05d248706806.jpg?v=1738230696000',
     name: `The Project Management Course: Beginner to PROject Manager`,
     year: '2025',
+    tags: ['project management', 'project'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4b92aea2-7504-4cab-add4-e0f2203a6b24.jpg?v=1738133183000',
     name: `Learn How To Code: Google's Go (golang) Programming Language`,
     year: '2025',
+    tags: ['go', 'go test'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-d2152e41-6bfa-4a8a-9f77-a6c4a789cb59.jpg?v=1708879219000',
     name: 'Principles of Secure Coding',
     year: '2024',
+    tags: ['secure coding'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-e8970833-cae4-4c65-b3e0-95e2e08ef428.jpg?v=1707496435000',
     name: 'Clean Code',
+    tags: ['clean code'],
     year: '2024',
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4512175e-f0eb-4ca5-8248-dced3c76cd21.jpg?v=1664123858000',
     name: 'JavaScript - The Complete Guide 2024 (Beginner + Advanced) ',
     year: '2024',
+    tags: ['javascript', 'ES'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2acaf9b5-35e3-45d1-915d-0f664de050a1.jpg?v=1707540295000',
     name: 'NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)',
     year: '2024',
+    tags: ['nodejs', 'GraphQL', 'Deno'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-4a1fc55c-8dcf-4b0c-b6ee-d5228a9e2474.jpg?v=1664127093000',
     name: 'CSS - The Complete Guide 2024 (incl. Flexbox, Grid & Sass)',
     year: '2024',
+    tags: ['CSS', 'grid', 'flexbox'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-b3ad2494-78e3-4b9b-9e8a-103680ecacb1.jpg?v=1664123078000',
     name: 'Flutter & Dart - The Complete Guide [2024 Edition]',
     year: '2022',
+    tags: ['Dart', 'Flutter', 'Cross Platform'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-9e567699-e403-4b59-a673-42aa62cf908f.jpg?v=1664126589000',
     name: 'Master Laravel, Vue 3 & Inertia Full Stack 2023',
     year: '2022',
+    tags: ['Laravel', 'Fullstack', 'Vue'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2a6052a7-0c17-4b85-a7b2-248089ca305e.jpg?v=1602426392000',
     name: 'The Ultimate Guide to 2D Mobile Game Development with Unity',
     year: '2020',
+    tags: ['2D Game', 'Unity', 'C#'],
   },
   {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2a6052a7-0c17-4b85-a7b2-248089ca305e.jpg?v=1602426392000',
     name: 'Complete C# Unity Game Developer 2D',
+    tags: ['2D Game', 'Unity', 'C#'],
     year: '2020',
   },
 ]
@@ -77,6 +94,7 @@ const redirect = (v: string) => {
         :img="d.img"
         :route="d.img"
         :ext_route="true"
+        :tags="d.tags"
         :onclick="
           () => {
             console.log(d.img)

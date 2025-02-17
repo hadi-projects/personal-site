@@ -197,6 +197,7 @@ onUnmounted(() => {
     bottom: 0;
     background: inherit;
     opacity: 0.5;
+    display: none;
   }
 
   .futuristic-wave-gradient-background::before {
@@ -211,20 +212,18 @@ onUnmounted(() => {
 
   .content-container {
     overflow-x: scroll;
-    /* position: relative; */
     z-index: 2;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     padding: 0;
   }
 
   .content-wrapper {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    /* border-radius: 12px; */
     box-shadow:
       0 4px 8px rgba(0, 0, 0, 0.1),
       0 8px 16px rgba(0, 0, 0, 0.08);
@@ -232,13 +231,13 @@ onUnmounted(() => {
       box-shadow 0.3s ease-in-out,
       transform 0.3s ease-in-out;
     padding: 0;
+    height: 100vh;
   }
 
   .content-wrapper:hover {
     box-shadow:
       0 6px 12px rgba(0, 0, 0, 0.15),
       0 12px 24px rgba(0, 0, 0, 0.12);
-    /* transform: translateY(-5px); */
   }
 
   .particle {
