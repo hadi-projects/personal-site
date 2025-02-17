@@ -90,6 +90,53 @@ const redirect = (d: string) => {
 </template>
 
 <style>
+.dialog-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000a2;
+  position: absolute;
+  display: flex;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(0, 0, 1, 0.2); */
+}
+.dialog {
+  width: 350px;
+  border-radius: 8px;
+  background: #0f172a;
+  padding: 1rem;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    0 12px 24px rgba(0, 0, 0, 0.12);
+  border: #14b8a587 0.5px solid;
+  color: white;
+}
+.dialog .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dialog .head svg {
+  width: 20px;
+}
+
+.dialog .as {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+  margin-top: 2rem;
+}
+.dialog .as p {
+  background-color: #0d9488;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
 .hidden {
   display: none;
 }

@@ -233,6 +233,7 @@ a {
     overflow: hidden;
     border: 1px solid rgba(20, 184, 166, 0.5);
     width: 160px;
+    height: max-content;
   }
   .title {
     font-size: 12px;
