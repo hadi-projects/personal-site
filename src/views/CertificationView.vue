@@ -3,6 +3,12 @@ import CardComponent2 from '@/components/CardComponent2.vue'
 
 const certificates = [
   {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-ac738e7f-76e9-4c22-9d16-0bdd3caa42af.jpg?v=1740138738000',
+    name: `Docker Mastery: with Kubernetes +Swarm from a Docker Captain`,
+    year: '2025',
+    tags: ['docker', 'container', 'kubernetes'],
+  },
+  {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-6796ed64-3757-42da-b202-7c04860a1dc2.jpg?v=1739721456000',
     name: `Ethereum and Solidity: The Complete Developer's Guide`,
     year: '2025',
