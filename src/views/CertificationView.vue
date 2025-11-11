@@ -3,6 +3,12 @@ import CardComponent2 from '@/components/CardComponent2.vue'
 
 const certificates = [
   {
+    img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-03df368b-8c30-4874-86ab-71cc40db252d.jpg?v=1762346392000',
+    name: `SQL - MySQL for Data Analytics and Business Intelligence`,
+    year: '2025',
+    tags: ['database', 'mysql'],
+  },
+  {
     img: 'https://udemy-certificate.s3.amazonaws.com/image/UC-ac738e7f-76e9-4c22-9d16-0bdd3caa42af.jpg?v=1740138738000',
     name: `Docker Mastery: with Kubernetes +Swarm from a Docker Captain`,
     year: '2025',
