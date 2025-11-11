@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import tennet_logo from '../assets/tennet.png'
+import idrx_logo from '../assets/idrx.png'
 import freelance from '../assets/freelance.png'
 import { useCounterStore } from '../stores/counter'
 import CardComponent2 from '@/components/CardComponent2.vue'
@@ -15,8 +16,15 @@ interface TimelineEvent {
 
 const timelineEvents: TimelineEvent[] = reactive([
   {
+    title: 'Software Engineer',
+    date: 'March 2025 - November 2025',
+    company: 'IDRX Indo Inovasi',
+    company_logo: idrx_logo,
+    route: 'se1',
+  },
+  {
     title: 'Lead Developer',
-    date: 'Juny 2024 - Now',
+    date: 'Juny 2024 - March 2025',
     company: 'Tennet Depository Indonesia',
     company_logo: tennet_logo,
     route: 'lead',

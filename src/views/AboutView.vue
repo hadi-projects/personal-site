@@ -27,7 +27,7 @@ const redirect = (d: string) => {
         >
       </section>
       <br />
-      <p class="upd">Latest update February 2025 .</p>
+      <p class="upd">Latest update November 2025 .</p>
     </footer>
   </div>
 </template>

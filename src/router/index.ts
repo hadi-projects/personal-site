@@ -19,6 +19,11 @@ const router = createRouter({
       component: () => import('../views/ExperienceView.vue'),
       children: [
         {
+          path: 'se1',
+          name: 'se1',
+          component: () => import('../views/experience/SoftwareEngineerIDRX.vue')
+        },
+        {
           path: 'lead',
           name: 'lead',
           component: () => import('../views/experience/LeadDeveloperView.vue')
