@@ -45,9 +45,9 @@ const r = (s: string) => {
             />
           </svg>
         </div>
-        <div class="pair" @click="r('https://github.com/hadigun007')">
+        <div class="pair" @click="r('https://github.com/cinnamorollofficials')">
           <img src="../assets/github.svg" alt="" />
-          <p>@hadigun007</p>
+          <p>@cinnamorollofficials</p>
           <svg
             width="24"
             height="25"
@@ -64,9 +64,9 @@ const r = (s: string) => {
             />
           </svg>
         </div>
-        <div class="pair" @click="r('https://linkedin.com/in/hadig007')">
+        <div class="pair" @click="r('https://linkedin.com/in/hadiyahku')">
           <img src="../assets/linkedin.svg" alt="" />
-          <p>@hadig007</p>
+          <p>@hadiyahku</p>
           <svg
             width="24"
             height="25"
